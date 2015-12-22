@@ -1,7 +1,10 @@
 #Munch
 A minimalistic, easy to use Rss reader application.
 
-<a href="https://play.google.com/store/apps/details?id=com.crazyhitty.chdev.ks.munch&utm_source=global_co&utm_medium=prtnr&utm_content=Mar2515&utm_campaign=PartBadge&pcampaignid=MKT-AC-global-none-all-co-pr-py-PartBadges-Oct1515-1"><img alt="Get it on Google Play" src="https://play.google.com/intl/en_us/badges/images/apps/en-play-badge.png" /></a>
+<a href="https://play.google.com/store/apps/details?id=com.crazyhitty.chdev.ks.munch">
+  <img alt="Get it on Google Play"
+       src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+</a>
 
 #What is Munch ?
 Munch is an android app which enable the users to manage their Rss feeds. User can add new sources, manage them and view the article associated with the feeds.
