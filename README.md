@@ -13,7 +13,7 @@ Munch is an android app which enable the users to manage their Rss feeds. User c
 * Internet
 * Access Network State
 
-These both permissions are used to grab the data from the web and to know if user’s internet is available or not so that he can be notified regarding that matter. Also, this app will never snoop your personal information.
+These both permissions are used to grab the data from the web and to know if user’s internet is available or not so that he can be notified regarding that matter. Also, this app will never snoop on your personal information.
 
 #Application features:
 * Load Rss feeds quickly
