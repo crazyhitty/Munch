@@ -1,0 +1,97 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@string/roboto_condensed</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppTheme.TransparentStatusBar">
+        <item name="colorPrimaryDark">@color/transparent</item>
+    </style>
+
+    <style name="AppThemeCustom" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:fontFamily" tools:targetApi="jelly_bean">@string/roboto_condensed</item>
+    </style>
+
+    <string name="PreferenceTheme">
+        <item name="android:textColorPrimary">@color/red_color</item>
+        <item name="android:textColorSecondary">@color/red_color</item>
+        <item name="android:textColorTertiary">@color/red_color</item>
+    </string>
+
+    <style name="AppThemeCustom.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="AppThemeCustom.NoActionBar.Cyan">
+        <item name="colorPrimary">@color/md_cyan_500</item>
+    </style>
+
+    <style name="AppThemeCustom.NoActionBar.Green">
+        <item name="colorPrimary">@color/md_green_500</item>
+    </style>
+
+    <style name="AppThemeCustom.NoActionBar.Red">
+        <item name="colorPrimary">@color/md_red_500</item>
+    </style>
+
+    <style name="AppThemeCustom.NoActionBar.Orange">
+        <item name="colorPrimary">@color/md_orange_500</item>
+    </style>
+
+    <style name="AppThemeCustom.NoActionBar.Lime">
+        <item name="colorPrimary">@color/md_lime_500</item>
+    </style>
+
+    <style name="AppThemeCustom.NoActionBar.Teal">
+        <item name="colorPrimary">@color/md_teal_500</item>
+    </style>
+
+    <style name="AppThemeCustom.NoActionBar.Purple">
+        <item name="colorPrimary">@color/md_purple_500</item>
+    </style>
+
+    <style name="AppThemeCustom.NoActionBar.Grey">
+        <item name="colorPrimary">@color/md_grey_500</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light"></style>
+
+    <style name="Divider">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">1dp</item>
+        <item name="android:background">?android:attr/listDivider</item>
+    </style>
+
+    <style name="AppTheme.TextInputLayout" parent="Widget.Design.TextInputLayout">
+        <item name="android:textColor">@color/md_white_1000</item>
+        <item name="colorAccent">@color/md_white_1000</item>
+    </style>
+
+    <style name="AppTheme.WhiteAccent" parent="AppTheme">
+        <item name="colorAccent">@color/white</item>
+    </style>
+
+    <style name="NavDrawer">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/md_grey_500</item>
+    </style>
+</resources>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">RssManager</string>
+    <string name="cancel">Cancel</string>
+    <string name="loading_feeds">Loading feeds</string>
+</resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/source_name"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_size_min" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_small" />
+
+    <EditText
+        android:id="@+id/edit_text_source_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/source_name" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_avg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/source_url"
+        android:textColor="@color/colorAccent"
+        android:textSize="@dimen/text_size_min" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_small" />
+
+    <EditText
+        android:id="@+id/edit_text_source_url"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/source_url"
+        android:inputType="textWebEmailAddress" />
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_avg" />
+
+    <FrameLayout
+        android:id="@+id/frame_layout_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:padding="@dimen/padding_min">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/text_view_category"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentLeft="true"
+                android:gravity="center_vertical"
+                android:text="@string/category"
+                android:textSize="@dimen/text_size_avg" />
+
+            <ImageView
+                android:id="@+id/image_view_category"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_fashion_24dp" />
+
+        </RelativeLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

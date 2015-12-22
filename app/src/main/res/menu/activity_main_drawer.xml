@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_feeds"
+            android:icon="@drawable/ic_feeds_24dp"
+            android:title="@string/nav_feeds" />
+        <item
+            android:id="@+id/nav_manage_sources"
+            android:icon="@drawable/ic_manage_feeds_24dp"
+            android:title="@string/nav_manage_sources" />
+        <item
+            android:id="@+id/nav_archive"
+            android:icon="@drawable/ic_nav_archive_24dp"
+            android:title="@string/nav_archive" />
+    </group>
+
+    <item android:title="@string/nav_extra">
+        <menu>
+            <item
+                android:id="@+id/nav_settings"
+                android:icon="@drawable/ic_settings_24dp"
+                android:title="@string/nav_settings" />
+            <item
+                android:id="@+id/nav_about"
+                android:icon="@drawable/ic_about_24dp"
+                android:title="@string/nav_about" />
+        </menu>
+    </item>
+
+</menu>

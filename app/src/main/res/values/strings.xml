@@ -1,0 +1,299 @@
+<resources>
+    <string name="app_name">Munch</string>
+    <string name="action_settings">Settings</string>
+    <string name="loading_feeds">Loading feeds</string>
+    <string name="cancel">Cancel</string>
+    <string name="feed_title">Feed title</string>
+    <string name="source">Source</string>
+    <string name="source_name">Source name</string>
+    <string name="feed_url">Feed url</string>
+    <string name="save">Save</string>
+    <string name="add_feed_title">Add Feed</string>
+    <string name="add_feed">Add your own RSS feed</string>
+
+    <!--font-->
+    <string name="roboto_light">sans-serif-light</string>
+    <string name="roboto_condensed">sans-serif-condensed</string>
+    <string name="roboto">sans-serif</string>
+    <string name="roboto_medium">sans-serif-medium</string>
+
+    <string name="category">Category</string>
+    <string name="add_category">Add a category</string>
+    <string name="source_url">Source url</string>
+    <string name="pub_date">Publish date</string>
+    <string name="clear_feeds">Clear Feeds</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string-array name="category_names">
+        <item>Automobiles</item>
+        <item>Books</item>
+        <item>Business</item>
+        <item>Climate</item>
+        <item>Comics</item>
+        <item>Deals</item>
+        <item>Economics</item>
+        <item>Education</item>
+        <item>Entertainment</item>
+        <item>Fashion</item>
+        <item>Finance</item>
+        <item>Fitness</item>
+        <item>Food</item>
+        <item>Gadgets</item>
+        <item>Gaming</item>
+        <item>Hardware</item>
+        <item>Health</item>
+        <item>International</item>
+        <item>Marketing</item>
+        <item>Music</item>
+        <item>National</item>
+        <item>Politics</item>
+        <item>Programming</item>
+        <item>Research</item>
+        <item>Science</item>
+        <item>Software</item>
+        <item>Space</item>
+        <item>Sports</item>
+        <item>Technology</item>
+    </string-array>
+
+    <string-array name="category_drawables">
+        <item>@drawable/ic_automobile_24dp</item>
+        <item>@drawable/ic_book_24dp</item>
+        <item>@drawable/ic_business_24dp</item>
+        <item>@drawable/ic_climate_24dp</item>
+        <item>@drawable/ic_comics_24dp</item>
+        <item>@drawable/ic_deals_24dp</item>
+        <item>@drawable/ic_economics_24dp</item>
+        <item>@drawable/ic_education_24dp</item>
+        <item>@drawable/ic_entertainment_24dp</item>
+        <item>@drawable/ic_fashion_24dp</item>
+        <item>@drawable/ic_finance_24dp</item>
+        <item>@drawable/ic_fitness_24dp</item>
+        <item>@drawable/ic_food_24dp</item>
+        <item>@drawable/ic_gadgets_24dp</item>
+        <item>@drawable/ic_gaming_24dp</item>
+        <item>@drawable/ic_hardware_24dp</item>
+        <item>@drawable/ic_health_24dp</item>
+        <item>@drawable/ic_international_24dp</item>
+        <item>@drawable/ic_marketing_24dp</item>
+        <item>@drawable/ic_music_24dp</item>
+        <item>@drawable/ic_national_24dp</item>
+        <item>@drawable/ic_politics_24dp</item>
+        <item>@drawable/ic_programming_24dp</item>
+        <item>@drawable/ic_research_24dp</item>
+        <item>@drawable/ic_science_24dp</item>
+        <item>@drawable/ic_software_24dp</item>
+        <item>@drawable/ic_space_24dp</item>
+        <item>@drawable/ic_sports_24dp</item>
+        <item>@drawable/ic_technology_24dp</item>
+    </string-array>
+
+    <string-array name="sources_test">
+        <item>All Sources</item>
+        <item>Reuters</item>
+        <item>BBC India</item>
+    </string-array>
+
+    <string-array name="feed_table_columns">
+        <item>item_name</item>
+        <item>item_desc</item>
+        <item>item_link</item>
+        <item>item_img_url</item>
+        <item>item_category</item>
+        <item>item_source</item>
+        <item>item_source_url</item>
+        <item>item_pub_date</item>
+        <item>item_category_img_id</item>
+    </string-array>
+
+    <string-array name="source_table_columns">
+        <item>source_name</item>
+        <item>source_url</item>
+        <item>source_category</item>
+        <item>source_category_img_id</item>
+    </string-array>
+
+    <string-array name="article_table_columns">
+        <item>article_name</item>
+        <item>article_desc</item>
+        <item>article_link</item>
+        <item>article_img_url</item>
+        <item>article_category</item>
+        <item>article_source</item>
+        <item>article_source_url</item>
+        <item>article_pub_date</item>
+        <item>article_category_img_id</item>
+        <item>article_content</item>
+    </string-array>
+
+    <string name="title_activity_article">ArticleActivity</string>
+    <string name="action_share">Share</string>
+    <string name="action_archive">Archive</string>
+    <string name="content">Content</string>
+    <string name="please_wait">Please wait</string>
+    <string name="loading">Loading</string>
+    <string name="nav_feeds">Feeds</string>
+    <string name="nav_manage_feeds">Manage Feeds</string>
+    <string name="nav_other">Other</string>
+    <string name="nav_extra">Extra</string>
+    <string name="nav_settings">Settings</string>
+    <string name="nav_about">About</string>
+    <string name="nav_archive">Archive</string>
+    <string name="remove_archive">Remove from archive</string>
+    <string name="remove_archive_content">This action will remove this article from your archive permanantly.</string>
+    <string name="remove">Remove</string>
+    <string name="nav_manage_sources">Manage Sources</string>
+    <string name="modify_source">Modify Source</string>
+    <string name="modify">Modify</string>
+    <string name="delete">Delete</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+    <string name="perf_ui">User Interface</string>
+
+    <string name="perf_feeds">Feeds</string>
+    <string name="perf_feeds_font_size">Feeds Font Size</string>
+    <string name="perf_feeds_font_size_desc">Manage font size of RSS feeds</string>
+    <string name="perf_feeds_font_size_key">perf_feeds_font_size</string>
+
+    <string-array name="perf_feeds_font_size_entries">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <string-array name="perf_feeds_font_size_entry_values">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <string name="perf_article">Article</string>
+    <string name="perf_article_font_size">Article Font Size</string>
+    <string name="perf_article_font_size_desc">Manage font size of article</string>
+    <string name="perf_article_font_size_key">perf_article_font_size</string>
+
+    <string-array name="perf_article_font_size_entries">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <string-array name="perf_article_font_size_entry_values">
+        <item>Small</item>
+        <item>Medium</item>
+        <item>Large</item>
+    </string-array>
+
+    <string name="perf_small">Small</string>
+    <string name="perf_medium">Medium</string>
+    <string name="perf_large">Large</string>
+
+    <string name="perf_feeds_anim">Enable Feeds Animation</string>
+    <string name="perf_feeds_anim_desc_enabled">If disabled, feeds won\'t animate, this might reduce lag</string>
+    <string name="perf_feeds_anim_desc_disabled">If enabled, feeds will animate, this might generate lag</string>
+    <string name="perf_feeds_anim_key">feeds_anim_key</string>
+
+    <string name="perf_sources_anim">Enable Sources Animation</string>
+    <string name="perf_sources_anim_desc_enabled">If disabled, sources won\'t animate, this might reduce lag</string>
+    <string name="perf_sources_anim_desc_disabled">If enabled, sources will animate, this might generate lag</string>
+    <string name="perf_sources_anim_key">sources_anim_key</string>
+
+    <string name="perf_in_app_browser">Enable In-App Browser</string>
+    <string name="perf_in_app_browser_desc_enabled">If disabled, application will open feed links via standard browser</string>
+    <string name="perf_in_app_browser_desc_disabled">If enabled, application will open feed links via in-app browser(requires chrome v45+)</string>
+    <string name="perf_in_app_browser_key">in_app_browser</string>
+
+    <string name="perf_cache">Enable Feeds Cache</string>
+    <string name="perf_cache_desc_enabled">If disabled, application will not store the feeds downloaded in the database</string>
+    <string name="perf_cache_desc_disabled">If enabled, application will store the feeds downloaded in the database</string>
+    <string name="perf_cache_key">feeds_cache</string>
+
+    <string name="perf_system">System</string>
+    <string name="perf_reset_db">Reset Database</string>
+    <string name="perf_reset_db_desc">Restore the database to its initial state</string>
+    <string name="perf_reset_db_message">This will remove all the values from the database. This incudes deleting your sources, archives and feeds.</string>
+
+    <string name="swipe_down">Swipe down to refresh</string>
+    <string name="archive_empty">Archive is empty</string>
+    <string name="action_open_in_browser">Open In Browser</string>
+    <string name="refresh">Refresh</string>
+    <string name="no_internet_available">No Internet Available</string>
+    <string name="no_internet_available_extnd">Unable to detect an internet connection. Please turn it on in your network settings.</string>
+    <string name="settings">Settings</string>
+    <string name="dismiss">Dismiss</string>
+    <string name="clear_feeds_desc">This would delete all feeds available currently. Don\'t worry, this won\'t reset your archive.</string>
+    <string name="clear">Clear</string>
+    <string name="no_content_available">No Content Available</string>
+    <string name="title_activity_splash">SplashActivity</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="splash_title_1">Munch</string>
+    <string name="splash_title_2">Read RSS feeds easily</string>
+    <string name="splash_title_3">Manage, Archive and share your feeds</string>
+    <string name="splash_desc_1">A Minimalistic Rss Reader</string>
+    <string name="splash_desc_2">Scroll swiftly through the available feeds</string>
+    <string name="splash_desc_3">Add your own Rss feed sources, manage them and read the articles associated with the feeds</string>
+
+    <string name="title_activity_about">AboutActivity</string>
+    <string name="created_by">Kartik Sharma\n(Aka Chdev)</string>
+    <string name="contact_dev">Contact the developer</string>
+
+    <string-array name="contacts">
+        <item>Email</item>
+        <item>Website</item>
+        <item>Google Plus</item>
+        <item>Github</item>
+    </string-array>
+
+    <string name="dev_mail">cr42yh17m4n@gmail.com</string>
+    <string name="dev_website">http://crazyhitty.com/</string>
+    <string name="dev_google_plus">https://plus.google.com/106736340463642451694</string>
+    <string name="dev_github">https://github.com/crazyhitty/</string>
+
+    <string name="libraries_used">Libraries Used</string>
+    <string name="library">Library</string>
+    <string name="library_creator">Library Creator</string>
+    <string name="library_desc">Library Desc</string>
+
+    <string-array name="library_names">
+        <item>Butter Knife</item>
+        <item>Jsoup</item>
+        <item>Material Dialogs</item>
+        <item>Circular Reveal</item>
+        <item>Clans/FAB</item>
+        <item>Glide</item>
+        <item>MaterialEditText</item>
+    </string-array>
+
+    <string-array name="library_descs">
+        <item>Field and method binding for Android views which uses annotation processing to generate boilerplate code for you.</item>
+        <item>Library for working with real-world HTML. It provides a very convenient API for extracting and manipulating data, using the best of DOM, CSS, and jquery-like methods.</item>
+        <item>Material Dialogs library allows you to use a consistently Material themed dialog on all versions of Android, along with specific customizations that make it easier to brand the dialog.</item>
+        <item>Lollipop ViewAnimationUtils.createCircularReveal for everyone, supports 2.3+ .</item>
+        <item>Yet another implementation of Floating Action Button for Android.</item>
+        <item>Glide is fast and efficient image loading library for Android that wraps image downloading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interface. By default, Glide includes an implementation for fetching images over http based on Google\'s Volley project for fast, parallelized network operations on Android.</item>
+        <item>MaterialEditText is an EditText in Material Design, with more features that Google Material Design Spec has introduced.</item>
+    </string-array>
+
+    <string-array name="library_creators">
+        <item>Jake Wharton</item>
+        <item>Jonathan Hedley</item>
+        <item>Aidan Follestad</item>
+        <item>Ozodrukh</item>
+        <item>Dmytro Tarianyk</item>
+        <item>Bump Technologies</item>
+        <item>Kai Zhu</item>
+    </string-array>
+
+    <string-array name="library_links">
+        <item>https://github.com/JakeWharton/butterknife</item>
+        <item>https://github.com/jhy/jsoup/</item>
+        <item>https://github.com/afollestad/material-dialogs</item>
+        <item>https://github.com/ozodrukh/CircularReveal</item>
+        <item>https://github.com/Clans/FloatingActionButton</item>
+        <item>https://github.com/bumptech/glide</item>
+        <item>https://github.com/rengwuxian/MaterialEditText</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context=".FeedsActivity"
+    tools:showIn="@layout/activity_home">
+
+    <io.codetail.widget.RevealFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/main_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/swipe_refresh_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone">
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recycler_view_feeds"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadeScrollbars="true"
+                    android:scrollbars="vertical"
+                    android:visibility="gone" />
+
+            </android.support.v4.widget.SwipeRefreshLayout>
+
+        </RelativeLayout>
+
+    </io.codetail.widget.RevealFrameLayout>
+
+    <io.codetail.widget.RevealFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/secondary_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/colorAccent"
+            android:visibility="invisible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/padding_avg">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/add_feed"
+                    android:textColor="@color/md_white_1000"
+                    android:textSize="@dimen/text_size_big" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_big" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/material_edit_text_source_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/source_name"
+                    android:theme="@style/AppTheme.WhiteAccent"
+                    app:met_baseColor="@color/white"
+                    app:met_errorColor="@color/white"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/white" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_small" />
+
+                <com.rengwuxian.materialedittext.MaterialEditText
+                    android:id="@+id/material_edit_text_source_url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/feed_url"
+                    android:inputType="textWebEmailAddress"
+                    android:theme="@style/AppTheme.WhiteAccent"
+                    app:met_baseColor="@color/white"
+                    app:met_errorColor="@color/white"
+                    app:met_floatingLabel="highlight"
+                    app:met_primaryColor="@color/white" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/space_small" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <Button
+                        android:id="@+id/button_category"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:enabled="false"
+                        android:text="@string/category"
+                        android:textColor="@color/md_white_1000" />
+
+                    <LinearLayout
+                        android:id="@+id/category_layout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:background="@drawable/category_bg"
+                        android:orientation="horizontal"
+                        android:padding="@dimen/padding_min"
+                        android:visibility="invisible">
+
+                        <ImageView
+                            android:id="@+id/image_view_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                        <Space
+                            android:layout_width="@dimen/space_min"
+                            android:layout_height="wrap_content" />
+
+                        <TextView
+                            android:id="@+id/text_view_category"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center_vertical" />
+
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_save"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:enabled="false"
+                        android:text="@string/save"
+                        android:textColor="@color/md_white_1000" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </io.codetail.widget.RevealFrameLayout>
+
+</RelativeLayout>

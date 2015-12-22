@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/perf_ui">
+
+        <ListPreference
+            android:defaultValue="@string/perf_small"
+            android:entries="@array/perf_feeds_font_size_entries"
+            android:entryValues="@array/perf_feeds_font_size_entry_values"
+            android:key="@string/perf_feeds_font_size_key"
+            android:summary="@string/perf_feeds_font_size_desc"
+            android:title="@string/perf_feeds_font_size" />
+
+        <ListPreference
+            android:defaultValue="@string/perf_medium"
+            android:entries="@array/perf_article_font_size_entries"
+            android:entryValues="@array/perf_article_font_size_entry_values"
+            android:key="@string/perf_article_font_size_key"
+            android:summary="@string/perf_article_font_size_desc"
+            android:title="@string/perf_article_font_size" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/perf_feeds_anim_key"
+            android:summaryOff="@string/perf_feeds_anim_desc_disabled"
+            android:summaryOn="@string/perf_feeds_anim_desc_enabled"
+            android:title="@string/perf_feeds_anim" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/perf_sources_anim_key"
+            android:summaryOff="@string/perf_sources_anim_desc_disabled"
+            android:summaryOn="@string/perf_sources_anim_desc_enabled"
+            android:title="@string/perf_sources_anim" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/perf_system">
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/perf_cache_key"
+            android:summaryOff="@string/perf_cache_desc_disabled"
+            android:summaryOn="@string/perf_cache_desc_enabled"
+            android:title="@string/perf_cache" />
+
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/perf_in_app_browser_key"
+            android:summaryOff="@string/perf_in_app_browser_desc_disabled"
+            android:summaryOn="@string/perf_in_app_browser_desc_enabled"
+            android:title="@string/perf_in_app_browser" />
+        <com.crazyhitty.chdev.ks.munch.ui.views.CustomPreferenceDialog
+            android:dialogMessage="@string/perf_reset_db_message"
+            android:dialogTitle="@string/perf_reset_db"
+            android:summary="@string/perf_reset_db_desc"
+            android:title="@string/perf_reset_db" />
+
+    </PreferenceCategory>
+
+</PreferenceScreen>
