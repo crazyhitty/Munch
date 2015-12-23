@@ -36,6 +36,14 @@
 
     <PreferenceCategory android:title="@string/perf_system">
 
+        <com.crazyhitty.chdev.ks.munch.ui.views.CustomListPreferenceDialog
+            android:defaultValue="@string/perf_theme_default_value"
+            android:entries="@array/perf_theme_entries"
+            android:entryValues="@array/perf_theme_values"
+            android:key="@string/perf_theme_key"
+            android:summary="@string/perf_theme_desc"
+            android:title="@string/perf_theme" />
+
         <SwitchPreference
             android:defaultValue="true"
             android:key="@string/perf_cache_key"
@@ -49,6 +57,7 @@
             android:summaryOff="@string/perf_in_app_browser_desc_disabled"
             android:summaryOn="@string/perf_in_app_browser_desc_enabled"
             android:title="@string/perf_in_app_browser" />
+
         <com.crazyhitty.chdev.ks.munch.ui.views.CustomPreferenceDialog
             android:dialogMessage="@string/perf_reset_db_message"
             android:dialogTitle="@string/perf_reset_db"

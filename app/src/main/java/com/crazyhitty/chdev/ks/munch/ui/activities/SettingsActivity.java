@@ -1,13 +1,16 @@
 package com.crazyhitty.chdev.ks.munch.ui.activities;
 
 
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceFragment;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 
 import com.crazyhitty.chdev.ks.munch.R;
+import com.crazyhitty.chdev.ks.munch.models.SettingsPreferences;
 
 import butterknife.Bind;
 import butterknife.ButterKnife;
@@ -31,10 +34,21 @@ public class SettingsActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setActivityTheme();
         setContentView(R.layout.activity_settings);
         ButterKnife.bind(this);
         setToolBar();
         getFragmentManager().beginTransaction().replace(R.id.frame_layout_settings, new SettingsFragment()).commit();
+    }
+
+    private void setActivityTheme() {
+        if (!SettingsPreferences.THEME) {
+            setTheme(R.style.DarkAppTheme_NoActionBar);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().setStatusBarColor(ContextCompat.getColor(SettingsActivity.this, R.color.darkColorPrimaryDark));
+            }
+            getWindow().setBackgroundDrawableResource(R.color.darkColorBackground);
+        }
     }
 
     private void setToolBar() {

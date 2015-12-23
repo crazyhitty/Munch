@@ -19,7 +19,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        android:theme="@style/NavDrawer"
         app:headerLayout="@layout/nav_header_main"
         app:itemBackground="@drawable/nav_item_bg"
         app:menu="@menu/activity_main_drawer" />

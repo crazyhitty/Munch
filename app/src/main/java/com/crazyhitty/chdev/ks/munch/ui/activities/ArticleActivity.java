@@ -141,56 +141,65 @@ public class ArticleActivity extends AppCompatActivity implements IArticleView {
     }
 
     private void setSystemTheme(int imgId) {
-        int primaryColor = -1, secondaryColor = -1;
+        if (!SettingsPreferences.THEME) {
+            setTheme(R.style.DarkAppTheme_NoActionBar);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().setStatusBarColor(ContextCompat.getColor(ArticleActivity.this, R.color.darkColorPrimaryDark));
+            }
+            getWindow().setBackgroundDrawableResource(R.color.darkColorBackground);
+        } else {
 
-        switch (imgId) {
-            case R.drawable.cyan_circle:
-                setTheme(R.style.AppThemeCustom_NoActionBar_Cyan);
-                primaryColor = R.color.md_cyan_500;
-                secondaryColor = R.color.md_cyan_700;
-                break;
-            case R.drawable.green_circle:
-                setTheme(R.style.AppThemeCustom_NoActionBar_Green);
-                primaryColor = R.color.md_green_500;
-                secondaryColor = R.color.md_green_700;
-                break;
-            case R.drawable.red_circle:
-                setTheme(R.style.AppThemeCustom_NoActionBar_Red);
-                primaryColor = R.color.md_red_500;
-                secondaryColor = R.color.md_red_700;
-                break;
-            case R.drawable.orange_circle:
-                setTheme(R.style.AppThemeCustom_NoActionBar_Orange);
-                primaryColor = R.color.md_deep_orange_500;
-                secondaryColor = R.color.md_deep_orange_700;
-                break;
-            case R.drawable.lime_circle:
-                setTheme(R.style.AppThemeCustom_NoActionBar_Lime);
-                primaryColor = R.color.md_lime_500;
-                secondaryColor = R.color.md_lime_700;
-                break;
-            case R.drawable.teal_circle:
-                setTheme(R.style.AppThemeCustom_NoActionBar_Teal);
-                primaryColor = R.color.md_teal_500;
-                secondaryColor = R.color.md_teal_700;
-                break;
-            case R.drawable.purple_circle:
-                setTheme(R.style.AppThemeCustom_NoActionBar_Purple);
-                primaryColor = R.color.md_deep_purple_500;
-                secondaryColor = R.color.md_deep_purple_700;
-                break;
-            case R.drawable.grey_circle:
-                setTheme(R.style.AppThemeCustom_NoActionBar_Grey);
-                primaryColor = R.color.md_grey_500;
-                secondaryColor = R.color.md_grey_700;
-                break;
-        }
+            int primaryColor = -1, secondaryColor = -1;
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            //failed at coloring the status bar transparent
-            //getWindow().setNavigationBarColor(ContextCompat.getColor(ArticleActivity.this, primaryColor));
-            //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            getWindow().setStatusBarColor(ContextCompat.getColor(ArticleActivity.this, secondaryColor));
+            switch (imgId) {
+                case R.drawable.cyan_circle:
+                    setTheme(R.style.AppThemeCustom_NoActionBar_Cyan);
+                    primaryColor = R.color.md_cyan_500;
+                    secondaryColor = R.color.md_cyan_700;
+                    break;
+                case R.drawable.green_circle:
+                    setTheme(R.style.AppThemeCustom_NoActionBar_Green);
+                    primaryColor = R.color.md_green_500;
+                    secondaryColor = R.color.md_green_700;
+                    break;
+                case R.drawable.red_circle:
+                    setTheme(R.style.AppThemeCustom_NoActionBar_Red);
+                    primaryColor = R.color.md_red_500;
+                    secondaryColor = R.color.md_red_700;
+                    break;
+                case R.drawable.orange_circle:
+                    setTheme(R.style.AppThemeCustom_NoActionBar_Orange);
+                    primaryColor = R.color.md_deep_orange_500;
+                    secondaryColor = R.color.md_deep_orange_700;
+                    break;
+                case R.drawable.lime_circle:
+                    setTheme(R.style.AppThemeCustom_NoActionBar_Lime);
+                    primaryColor = R.color.md_lime_500;
+                    secondaryColor = R.color.md_lime_700;
+                    break;
+                case R.drawable.teal_circle:
+                    setTheme(R.style.AppThemeCustom_NoActionBar_Teal);
+                    primaryColor = R.color.md_teal_500;
+                    secondaryColor = R.color.md_teal_700;
+                    break;
+                case R.drawable.purple_circle:
+                    setTheme(R.style.AppThemeCustom_NoActionBar_Purple);
+                    primaryColor = R.color.md_deep_purple_500;
+                    secondaryColor = R.color.md_deep_purple_700;
+                    break;
+                case R.drawable.grey_circle:
+                    setTheme(R.style.AppThemeCustom_NoActionBar_Grey);
+                    primaryColor = R.color.md_grey_500;
+                    secondaryColor = R.color.md_grey_700;
+                    break;
+            }
+
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                //failed at coloring the status bar transparent
+                //getWindow().setNavigationBarColor(ContextCompat.getColor(ArticleActivity.this, primaryColor));
+                //getWindow().addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+                getWindow().setStatusBarColor(ContextCompat.getColor(ArticleActivity.this, secondaryColor));
+            }
         }
     }
 

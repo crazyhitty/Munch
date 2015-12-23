@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -40,6 +42,9 @@ public class AboutActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setActivityTheme();
+
         setContentView(R.layout.activity_about);
 
         ButterKnife.bind(this);
@@ -51,6 +56,16 @@ public class AboutActivity extends AppCompatActivity {
 
         //set our libraries recycler view
         setLibrariesRecyclerView();
+    }
+
+    private void setActivityTheme() {
+        if (!SettingsPreferences.THEME) {
+            setTheme(R.style.DarkAppTheme_NoActionBar);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                getWindow().setStatusBarColor(ContextCompat.getColor(AboutActivity.this, R.color.darkColorPrimaryDark));
+            }
+            getWindow().setBackgroundDrawableResource(R.color.darkColorBackground);
+        }
     }
 
     private void setToolbar() {

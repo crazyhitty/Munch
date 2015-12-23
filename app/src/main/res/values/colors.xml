@@ -11,6 +11,14 @@
     <color name="white">#F5F5F5</color>
     <color name="transparent">#00000000</color>
 
+    <!--Dark theme-->
+    <color name="darkColorPrimary">@color/md_blue_grey_700</color>
+    <color name="darkColorPrimaryDark">@color/md_blue_grey_900</color>
+    <color name="darkColorAccent">@color/md_grey_700</color>
+    <color name="darkColorAccentDark">@color/md_grey_900</color>
+    <color name="darkColorAccentLight">@color/md_grey_500</color>
+    <color name="darkColorBackground">@color/md_grey_900</color>
+
     <!--material colors-->
     <!--reds-->
     <color name="md_red_50">#FFEBEE</color>

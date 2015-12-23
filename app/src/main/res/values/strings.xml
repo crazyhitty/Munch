@@ -200,6 +200,21 @@
     <string name="perf_sources_anim_desc_disabled">If enabled, sources will animate, this might generate lag</string>
     <string name="perf_sources_anim_key">sources_anim_key</string>
 
+    <string name="perf_theme">Manage themes</string>
+    <string name="perf_theme_desc">Change the system theme</string>
+    <string name="perf_theme_key">perf_theme</string>
+    <string name="perf_theme_default_value">Light</string>
+
+    <string-array name="perf_theme_entries">
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+
+    <string-array name="perf_theme_values">
+        <item>Light</item>
+        <item>Dark</item>
+    </string-array>
+
     <string name="perf_in_app_browser">Enable In-App Browser</string>
     <string name="perf_in_app_browser_desc_enabled">If disabled, application will open feed links via standard browser</string>
     <string name="perf_in_app_browser_desc_disabled">If enabled, application will open feed links via in-app browser(requires chrome v45+)</string>

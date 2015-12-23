@@ -21,6 +21,7 @@ public class SettingsPreferences {
     public static int ARTICLE_PUBLISH_DATE_SIZE;
     public static int ARTICLE_CONTENT_SIZE;
 
+    public static boolean THEME;
     public static boolean FEED_CACHE;
     public static boolean IN_APP_BROWSER;
     public static boolean FEEDS_RECYCLER_VIEW_ANIMATION;
@@ -35,6 +36,7 @@ public class SettingsPreferences {
         setArticleFontSize(context, defaultSharedPreferences);
         setFeedsRecyclerViewAnimation(context, defaultSharedPreferences);
         setSourcesRecyclerViewAnimation(context, defaultSharedPreferences);
+        setTheme(context, defaultSharedPreferences);
         setFeedsCache(context, defaultSharedPreferences);
         setInAppBrowser(context, defaultSharedPreferences);
     }
@@ -102,6 +104,20 @@ public class SettingsPreferences {
     private static void setSourcesRecyclerViewAnimation(Context context, SharedPreferences defaultSharedPreferences) {
         String sourcesRecyclerViewAnimationKey = context.getResources().getString(R.string.perf_sources_anim_key);
         SOURCES_RECYCLER_VIEW_ANIMATION = defaultSharedPreferences.getBoolean(sourcesRecyclerViewAnimationKey, true);
+    }
+
+    private static void setTheme(Context context, SharedPreferences defaultSharedPreferences) {
+        String themeKey = context.getResources().getString(R.string.perf_theme_key);
+        String theme = defaultSharedPreferences.getString(themeKey, "Light");
+
+        switch (theme) {
+            case "Light":
+                THEME = true;
+                break;
+            case "Dark":
+                THEME = false;
+                break;
+        }
     }
 
     private static void setFeedsCache(Context context, SharedPreferences defaultSharedPreferences) {

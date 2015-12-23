@@ -7,6 +7,7 @@ import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.content.ContextCompat;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
@@ -97,15 +98,18 @@ public class HomeActivity extends AppCompatActivity implements ISourceView, Floa
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //set theme
-        setTheme(R.style.AppTheme_NoActionBar);
-
-        setContentView(R.layout.activity_home);
-
         //initialize settings
         SettingsPreferences.init(HomeActivity.this);
 
+        //set theme
+        setActivityTheme();
+
+        setContentView(R.layout.activity_home);
+
         ButterKnife.bind(HomeActivity.this);
+
+        //set theme of other ui elements
+        setUiElementsTheme();
 
         if (mSourcesPresenter == null) {
             mSourcesPresenter = new SourcesPresenter(HomeActivity.this, HomeActivity.this);
@@ -127,6 +131,22 @@ public class HomeActivity extends AppCompatActivity implements ISourceView, Floa
         //set the first item enabled true
         navigationView.getMenu().getItem(0).setChecked(true);
 
+    }
+
+    private void setActivityTheme() {
+        if (!SettingsPreferences.THEME) {
+            setTheme(R.style.DarkAppTheme_NoActionBar);
+            getWindow().setBackgroundDrawableResource(R.color.darkColorBackground);
+        }
+    }
+
+    private void setUiElementsTheme() {
+        if (!SettingsPreferences.THEME) {
+            fab.setMenuButtonColorNormal(ContextCompat.getColor(HomeActivity.this, R.color.darkColorAccent));
+            fab.setMenuButtonColorPressed(ContextCompat.getColor(HomeActivity.this, R.color.darkColorAccent));
+            fab.setMenuButtonColorRipple(ContextCompat.getColor(HomeActivity.this, R.color.darkColorAccentDark));
+            secondaryLayout.setBackgroundColor(ContextCompat.getColor(HomeActivity.this, R.color.darkColorAccent));
+        }
     }
 
     @Override

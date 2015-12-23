@@ -1,6 +1,7 @@
 package com.crazyhitty.chdev.ks.munch.ui.adapters;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -49,11 +50,18 @@ public class SourcesRecyclerViewAdapter extends RecyclerView.Adapter<SourcesRecy
         holder.mTxtCategory.setText(mSourceItems.get(position).getSourceCategoryName());
         //holder.mImgCategory.setImageResource(mSourceItems.get(position).getSourceCategoryImgId());
         holder.mImgCategory.setImageResource(new Categories(mContext).getDrawableId(mSourceItems.get(position).getSourceCategoryName()));
-        //holder.mCardSource.setCardBackgroundColor(new ColorsUtil().getRandomColor());
 
         //add fading animation as the items start loading
         if (SettingsPreferences.SOURCES_RECYCLER_VIEW_ANIMATION) {
             setAnimation(holder.mItemView, position);
+        }
+
+        //set card background color
+        if (!SettingsPreferences.THEME) {
+            holder.mCardSource.setCardBackgroundColor(ContextCompat.getColor(mContext, R.color.darkColorAccent));
+        } else {
+            //looks ugly
+            //holder.mCardSource.setCardBackgroundColor(ContextCompat.getColor(mContext, new ColorsUtil().getRandomColor()));
         }
     }
 
