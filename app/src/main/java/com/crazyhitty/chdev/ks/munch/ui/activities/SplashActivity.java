@@ -41,6 +41,7 @@ public class SplashActivity extends AppCompatActivity implements ViewPager.OnPag
         // primary sections of the activity.
         mSplashPagerAdapter = new SplashPagerAdapter(getSupportFragmentManager());
         viewPager.setAdapter(mSplashPagerAdapter);
+        viewPager.setOffscreenPageLimit(3);
         //set page transformer
         viewPager.setPageTransformer(false, new FadePageTransformerUtil());
 

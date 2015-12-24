@@ -11,6 +11,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
@@ -155,6 +157,49 @@ public class AboutActivity extends AppCompatActivity {
         recyclerViewLibraries.setLayoutManager(mLayoutManager);
         LibrariesRecyclerViewAdapter librariesRecyclerViewAdapter = new LibrariesRecyclerViewAdapter(AboutActivity.this, new LibraryItem().getLibraryItems(AboutActivity.this));
         recyclerViewLibraries.setAdapter(librariesRecyclerViewAdapter);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_about, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_rate) {
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse("market://details?id=com.crazyhitty.chdev.ks.munch"));
+            startActivity(intent);
+            return true;
+        }
+
+        if (id == R.id.action_source_code) {
+            if (SettingsPreferences.IN_APP_BROWSER) {
+                new WebsiteIntentUtil(AboutActivity.this).loadCustomChromeTabs(getResources().getString(R.string.github_source_code));
+            } else {
+                new WebsiteIntentUtil(AboutActivity.this).loadNormalBrowser(getResources().getString(R.string.github_source_code));
+            }
+            return true;
+        }
+
+        if (id == R.id.action_licence) {
+            MaterialDialog licenceDialog = new MaterialDialog.Builder(AboutActivity.this)
+                    .title(R.string.licence)
+                    .content(R.string.licence_desc)
+                    .negativeText(R.string.dismiss)
+                    .build();
+            licenceDialog.show();
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
 }
