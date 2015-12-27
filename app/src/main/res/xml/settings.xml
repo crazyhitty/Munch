@@ -32,6 +32,13 @@
             android:summaryOn="@string/perf_sources_anim_desc_enabled"
             android:title="@string/perf_sources_anim" />
 
+        <SwitchPreference
+            android:defaultValue="true"
+            android:key="@string/perf_circular_reveal_key"
+            android:summaryOff="@string/perf_circular_reveal_desc_disabled"
+            android:summaryOn="@string/perf_circular_reveal_desc_enabled"
+            android:title="@string/perf_circular_reveal" />
+
     </PreferenceCategory>
 
     <PreferenceCategory android:title="@string/perf_system">

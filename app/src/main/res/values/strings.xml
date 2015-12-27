@@ -200,6 +200,11 @@
     <string name="perf_sources_anim_desc_disabled">If enabled, sources will animate, this might generate lag</string>
     <string name="perf_sources_anim_key">sources_anim_key</string>
 
+    <string name="perf_circular_reveal">Enable Circular Reveal Animation</string>
+    <string name="perf_circular_reveal_desc_enabled">If disabled, you won\'t see a circular reveal animation on add sources screen</string>
+    <string name="perf_circular_reveal_desc_disabled">If enabled, you will see a circular reveal animation on add sources screen</string>
+    <string name="perf_circular_reveal_key">circular_reveal_key</string>
+
     <string name="perf_theme">Manage themes</string>
     <string name="perf_theme_desc">Change the system theme</string>
     <string name="perf_theme_key">perf_theme</string>

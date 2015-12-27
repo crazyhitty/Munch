@@ -249,14 +249,24 @@ public class HomeActivity extends AppCompatActivity implements ISourceView, Floa
             new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(txtToolbarTitle, 500);
             new FadeAnimationUtil(HomeActivity.this).fadeOutAlpha(spinnerSources, 500);
             //new FadeAnimationUtil(HomeActivity.this).fadeOutAlpha(toolbar, 500);
-            mAnimationUtil.revealAnimation(secondaryLayout, mainLayout);
+            if (SettingsPreferences.CIRCULAR_REVEAL) {
+                mAnimationUtil.revealAnimation(secondaryLayout, mainLayout);
+            } else {
+                new FadeAnimationUtil(HomeActivity.this).fadeOutAlpha(mainLayout, 500);
+                new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(secondaryLayout, 500);
+            }
         } else {
             if (mNavPosition == 0) {
                 new FadeAnimationUtil(HomeActivity.this).fadeOutAlpha(txtToolbarTitle, 500);
                 new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(spinnerSources, 500);
             }
             //new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(toolbar, 500);
-            mAnimationUtil.revealAnimationHide(secondaryLayout, mainLayout);
+            if (SettingsPreferences.CIRCULAR_REVEAL) {
+                mAnimationUtil.revealAnimationHide(secondaryLayout, mainLayout);
+            } else {
+                new FadeAnimationUtil(HomeActivity.this).fadeOutAlpha(secondaryLayout, 500);
+                new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(mainLayout, 500);
+            }
         }
         mAddFeedStatus = status;
     }
@@ -346,7 +356,12 @@ public class HomeActivity extends AppCompatActivity implements ISourceView, Floa
             public void run() {
                 //new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(toolbar, 500);
                 drawer.setEnabled(true);
-                mAnimationUtil.revealAnimationHide(secondaryLayout, mainLayout);
+                if (SettingsPreferences.CIRCULAR_REVEAL) {
+                    mAnimationUtil.revealAnimationHide(secondaryLayout, mainLayout);
+                } else {
+                    new FadeAnimationUtil(HomeActivity.this).fadeOutAlpha(secondaryLayout, 500);
+                    new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(mainLayout, 500);
+                }
             }
         }, 500);
         mAddFeedStatus = false;
@@ -449,7 +464,12 @@ public class HomeActivity extends AppCompatActivity implements ISourceView, Floa
                 @Override
                 public void run() {
                     //new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(toolbar, 500);
-                    mAnimationUtil.revealAnimationHide(secondaryLayout, mainLayout);
+                    if (SettingsPreferences.CIRCULAR_REVEAL) {
+                        mAnimationUtil.revealAnimationHide(secondaryLayout, mainLayout);
+                    } else {
+                        new FadeAnimationUtil(HomeActivity.this).fadeOutAlpha(secondaryLayout, 500);
+                        new FadeAnimationUtil(HomeActivity.this).fadeInAlpha(mainLayout, 500);
+                    }
                 }
             }, 500);
             mAddFeedStatus = false;

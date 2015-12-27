@@ -26,6 +26,7 @@ public class SettingsPreferences {
     public static boolean IN_APP_BROWSER;
     public static boolean FEEDS_RECYCLER_VIEW_ANIMATION;
     public static boolean SOURCES_RECYCLER_VIEW_ANIMATION;
+    public static boolean CIRCULAR_REVEAL;
 
     private static String SHARED_SP = "DEFAULT_SP";
     private static String NEW_INSTALL = "new_install";
@@ -36,6 +37,7 @@ public class SettingsPreferences {
         setArticleFontSize(context, defaultSharedPreferences);
         setFeedsRecyclerViewAnimation(context, defaultSharedPreferences);
         setSourcesRecyclerViewAnimation(context, defaultSharedPreferences);
+        setCircularReveal(context, defaultSharedPreferences);
         setTheme(context, defaultSharedPreferences);
         setFeedsCache(context, defaultSharedPreferences);
         setInAppBrowser(context, defaultSharedPreferences);
@@ -104,6 +106,11 @@ public class SettingsPreferences {
     private static void setSourcesRecyclerViewAnimation(Context context, SharedPreferences defaultSharedPreferences) {
         String sourcesRecyclerViewAnimationKey = context.getResources().getString(R.string.perf_sources_anim_key);
         SOURCES_RECYCLER_VIEW_ANIMATION = defaultSharedPreferences.getBoolean(sourcesRecyclerViewAnimationKey, true);
+    }
+
+    private static void setCircularReveal(Context context, SharedPreferences defaultSharedPreferences) {
+        String circularRevealKey = context.getResources().getString(R.string.perf_circular_reveal_key);
+        CIRCULAR_REVEAL = defaultSharedPreferences.getBoolean(circularRevealKey, true);
     }
 
     private static void setTheme(Context context, SharedPreferences defaultSharedPreferences) {
