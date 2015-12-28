@@ -5,6 +5,7 @@ A minimalistic, easy to use Rss reader application.
   <img alt="Get it on Google Play"
        src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
 </a>
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Munch-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/2955)
 
 #What is Munch ?
 Munch is an android app which enable the users to manage their Rss feeds. User can add new sources, manage them and view the article associated with the feeds.
