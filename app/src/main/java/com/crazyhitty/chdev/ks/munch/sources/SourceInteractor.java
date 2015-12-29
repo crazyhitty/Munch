@@ -46,7 +46,7 @@ public class SourceInteractor implements ISourceInteractor {
             DatabaseUtil databaseUtil = new DatabaseUtil(mContext);
             databaseUtil.saveSourceInDB(sourceItem);
 
-            onSourceSavedListener.onSuccess("source_saved");
+            onSourceSavedListener.onSuccess("Source saved");
         }
     }
 

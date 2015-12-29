@@ -38,7 +38,7 @@ public class ArticleInteractor implements IArticleInteractor {
                 .content(R.string.please_wait)
                 .progress(true, 0)
                 .progressIndeterminateStyle(true)
-
+                .cancelable(false)
                 .negativeText(R.string.cancel)
                 .onNegative(new MaterialDialog.SingleButtonCallback() {
                     @Override

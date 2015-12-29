@@ -114,8 +114,6 @@ public class FeedsFragment extends Fragment implements IFeedsView, SwipeRefreshL
             if (mSource.equals("all_sources")) {
                 mFeedsPresenter.attemptFeedLoading();
             } else {
-                Toast.makeText(getActivity(), "not working", Toast.LENGTH_SHORT).show();
-                //fix it later
                 mFeedsPresenter.attemptFeedLoading(mSource);
             }
         } else {
