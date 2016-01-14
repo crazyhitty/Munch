@@ -15,4 +15,6 @@ public interface ISourcePresenter {
     void getSourceItems();
 
     void modifySources(Context context, SourceItem sourceItem);
+
+    void deleteSource(SourceItem sourceItem);
 }

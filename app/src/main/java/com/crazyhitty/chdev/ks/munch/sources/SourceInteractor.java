@@ -1,10 +1,10 @@
 package com.crazyhitty.chdev.ks.munch.sources;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.crazyhitty.chdev.ks.munch.models.SourceItem;
 import com.crazyhitty.chdev.ks.munch.utils.DatabaseUtil;
+import com.crazyhitty.chdev.ks.munch.utils.UrlUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,7 +24,7 @@ public class SourceInteractor implements ISourceInteractor {
         // main shit happens here
         this.onSourceSavedListener = onSourceSavedListener;
 
-        String regexUrl = "^(https?|ftp|file)://[-a-zA-Z0-9+&@#/%?=~_|!:,.;]*[-a-zA-Z0-9+&@#/%=~_|]";
+        String regexUrl = UrlUtil.REGEX_URL;
 
         if (sourceItem.getSourceName().isEmpty() && sourceItem.getSourceUrl().isEmpty() && sourceItem.getSourceCategoryName().isEmpty()) {
             onSourceSavedListener.onFailure("name_url_category_empty");
@@ -37,11 +37,11 @@ public class SourceInteractor implements ISourceInteractor {
         } else if (!sourceItem.getSourceUrl().matches(regexUrl)) {
             onSourceSavedListener.onFailure("incorrect_url");
         } else {
-            Log.e("name", sourceItem.getSourceName());
-            Log.e("url", sourceItem.getSourceUrl());
-            Log.e("category", sourceItem.getSourceCategoryName());
-            Log.e("categoryImgId", String.valueOf(sourceItem.getSourceCategoryImgId()));
-            Log.e("date", sourceItem.getSourceDateAdded());
+            //Log.e("name", sourceItem.getSourceName());
+            //Log.e("url", sourceItem.getSourceUrl());
+            //Log.e("category", sourceItem.getSourceCategoryName());
+            //Log.e("categoryImgId", String.valueOf(sourceItem.getSourceCategoryImgId()));
+            //Log.e("date", sourceItem.getSourceDateAdded());
 
             DatabaseUtil databaseUtil = new DatabaseUtil(mContext);
             databaseUtil.saveSourceInDB(sourceItem);

@@ -2,6 +2,7 @@ package com.crazyhitty.chdev.ks.munch.models;
 
 import android.content.Context;
 import android.content.res.TypedArray;
+import android.support.v4.content.ContextCompat;
 
 import com.crazyhitty.chdev.ks.munch.R;
 
@@ -27,7 +28,7 @@ public class Categories {
         for (int i = 0; i < categoryNames.length; i++) {
             CategoryItem categoryItem = new CategoryItem();
             categoryItem.setCategoryName(categoryNames[i]);
-            categoryItem.setCategoryImg(mContext.getResources().getDrawable(categoryImgs.getResourceId(i, -1)));
+            categoryItem.setCategoryImg(ContextCompat.getDrawable(mContext, categoryImgs.getResourceId(i, -1)));
             categoryItems.add(categoryItem);
         }
 
@@ -80,6 +81,8 @@ public class Categories {
                 return R.drawable.ic_national_24dp;
             case "Politics":
                 return R.drawable.ic_politics_24dp;
+            case "Productivity":
+                return R.drawable.ic_productivity_24dp;
             case "Programming":
                 return R.drawable.ic_programming_24dp;
             case "Research":
@@ -94,6 +97,8 @@ public class Categories {
                 return R.drawable.ic_sports_24dp;
             case "Technology":
                 return R.drawable.ic_technology_24dp;
+            case "Unknown":
+                return R.drawable.ic_unknown_24dp;
             default:
                 return 0;
         }

@@ -1,0 +1,22 @@
+{
+  "version": 0.11,
+  "release_date": "2016-01-03",
+  "last_modified": "2016-01-14",
+  "curated_feeds": [
+    {
+      "source_name": "Arstechnica",
+      "source_url": "http://feeds.arstechnica.com/arstechnica/index?format=xml",
+      "source_category": "Gadgets"
+    },
+    {
+      "source_name": "Reuters Top News",
+      "source_url": "http://feeds.reuters.com/reuters/topNews?format=xml",
+      "source_category": "International"
+    },
+    {
+      "source_name": "IGN",
+      "source_url": "http://feeds.ign.com/ign/all?format=xml",
+      "source_category": "Entertainment"
+    }
+  ]
+}

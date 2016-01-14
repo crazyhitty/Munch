@@ -256,12 +256,19 @@ public class ArticleActivity extends AppCompatActivity implements IArticleView {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
+        //override default back button present on the toolbar
+        if (id == android.R.id.home) {
+            onBackPressed();
+            return true;
+        }
+
         if (id == R.id.action_refresh) {
             if (NetworkConnectionUtil.isNetworkAvailable(ArticleActivity.this)) {
                 mArticlePresenter.attemptArticleLoading(getFeedItem().getItemLink());
             } else {
                 NetworkConnectionUtil.showNoNetworkDialog(ArticleActivity.this);
             }
+            return true;
         }
 
         if (id == R.id.action_share) {

@@ -22,6 +22,7 @@ import com.crazyhitty.chdev.ks.munch.R;
 import com.crazyhitty.chdev.ks.munch.feeds.FeedsPresenter;
 import com.crazyhitty.chdev.ks.munch.feeds.IFeedsView;
 import com.crazyhitty.chdev.ks.munch.models.FeedItem;
+import com.crazyhitty.chdev.ks.munch.models.SettingsPreferences;
 import com.crazyhitty.chdev.ks.munch.ui.adapters.FeedsRecyclerViewAdapter;
 import com.crazyhitty.chdev.ks.munch.utils.FadeAnimationUtil;
 import com.crazyhitty.chdev.ks.munch.utils.NetworkConnectionUtil;
@@ -126,7 +127,6 @@ public class FeedsFragment extends Fragment implements IFeedsView, SwipeRefreshL
     public void feedsLoaded(List<FeedItem> feedItems) {
         swipeRefreshLayout.setRefreshing(false);
         if (feedItems != null) {
-
             if (feedItems.size() == 0) {
                 new FadeAnimationUtil(getActivity()).fadeInAlpha(linearLayoutEmptyFeeds, 500);
             } else {
@@ -166,6 +166,30 @@ public class FeedsFragment extends Fragment implements IFeedsView, SwipeRefreshL
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
+        if (id == R.id.action_sort) {
+            MaterialDialog sortDialog = new MaterialDialog.Builder(getActivity())
+                    .title(R.string.sort_feeds)
+                    .positiveText(R.string.sort)
+                    .negativeText(R.string.cancel)
+                    .items(R.array.sort_feeds_types)
+                    .itemsCallbackSingleChoice(SettingsPreferences.getSortingMethodPosition(getActivity()), new MaterialDialog.ListCallbackSingleChoice() {
+                        @Override
+                        public boolean onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
+                            SettingsPreferences.setSortingMethodPosition(getActivity(), which);
+                            new Handler().postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    loadFeedsFromDb();
+                                }
+                            }, 500);
+                            return false;
+                        }
+                    }).build();
+            sortDialog.show();
+            return true;
+        }
+
         if (id == R.id.action_refresh) {
             onRefresh();
             return true;

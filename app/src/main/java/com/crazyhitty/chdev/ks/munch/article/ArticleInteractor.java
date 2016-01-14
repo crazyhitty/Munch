@@ -139,7 +139,11 @@ public class ArticleInteractor implements IArticleInteractor {
                     body += para + "\n\n";
                 }
             }
-            return body.substring(0, body.length() - 1);
+            if (body.length() != 0) {
+                return body.substring(0, body.length() - 1);
+            } else {
+                return "No Content Available";
+            }
         }
     }
 }

@@ -2,8 +2,11 @@ package com.crazyhitty.chdev.ks.munch.models;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.preference.PreferenceManager;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.crazyhitty.chdev.ks.munch.R;
 
 /**
@@ -27,11 +30,12 @@ public class SettingsPreferences {
     public static boolean FEEDS_RECYCLER_VIEW_ANIMATION;
     public static boolean SOURCES_RECYCLER_VIEW_ANIMATION;
     public static boolean CIRCULAR_REVEAL;
-
-    //public static String[] CURATED_FEEDS_SOURCES;
+    public static boolean CHANGE_LOG_DIALOG_SHOW;
 
     private static String SHARED_SP = "DEFAULT_SP";
     private static String NEW_INSTALL = "new_install";
+    private static String FEEDS_SORT = "feeds_sort";
+    private static String APP_VERSION = "app_version";
 
     public static void init(Context context) {
         SharedPreferences defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(context);
@@ -40,10 +44,10 @@ public class SettingsPreferences {
         setFeedsRecyclerViewAnimation(context, defaultSharedPreferences);
         setSourcesRecyclerViewAnimation(context, defaultSharedPreferences);
         setCircularReveal(context, defaultSharedPreferences);
-        //setCuratedFeeds(context, defaultSharedPreferences);
         setTheme(context, defaultSharedPreferences);
         setFeedsCache(context, defaultSharedPreferences);
         setInAppBrowser(context, defaultSharedPreferences);
+        isChangeDialogToBeShown(context);
     }
 
     private static void setFeedsFontSize(Context context, SharedPreferences defaultSharedPreferences) {
@@ -116,10 +120,6 @@ public class SettingsPreferences {
         CIRCULAR_REVEAL = defaultSharedPreferences.getBoolean(circularRevealKey, true);
     }
 
-    /*private static void setCuratedFeeds(Context context, SharedPreferences defaultSharedPreferences) {
-
-    }*/
-
     private static void setTheme(Context context, SharedPreferences defaultSharedPreferences) {
         String themeKey = context.getResources().getString(R.string.perf_theme_key);
         String theme = defaultSharedPreferences.getString(themeKey, "Light");
@@ -154,5 +154,90 @@ public class SettingsPreferences {
         SharedPreferences.Editor editor = sharedPreferences.edit();
         editor.putBoolean(NEW_INSTALL, false);
         editor.commit();
+    }
+
+    public static String getSortingMethod(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_SP, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(FEEDS_SORT, "random");
+    }
+
+    public static int getSortingMethodPosition(Context context) {
+        switch (getSortingMethod(context)) {
+            case "random":
+                return 0;
+            case "feed_title":
+                return 1;
+            case "feed_category":
+                return 2;
+            case "feed_pub_date":
+                return 3;
+            default:
+                return -1;
+        }
+    }
+
+    public static void setSortingMethodPosition(Context context, int position) {
+        switch (position) {
+            case 0:
+                setSortingMethod(context, "random");
+                break;
+            case 1:
+                setSortingMethod(context, "feed_title");
+                break;
+            case 2:
+                setSortingMethod(context, "feed_category");
+                break;
+            case 3:
+                setSortingMethod(context, "feed_pub_date");
+                break;
+        }
+    }
+
+    public static void setSortingMethod(Context context, String type) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_SP, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(FEEDS_SORT, type);
+        editor.commit();
+    }
+
+    public static void showChangeLog(Context context) {
+        MaterialDialog changeLogDialog = new MaterialDialog.Builder(context)
+                .title(R.string.change_log)
+                .content(R.string.change_log_desc)
+                .negativeText(R.string.dismiss)
+                .build();
+        changeLogDialog.show();
+    }
+
+    private static void isChangeDialogToBeShown(Context context) {
+        if (!getOldAppVersion(context).equals(getCurrAppVersion(context))) {
+            CHANGE_LOG_DIALOG_SHOW = true;
+            setAppVersion(context);
+        } else {
+            CHANGE_LOG_DIALOG_SHOW = false;
+        }
+    }
+
+    private static void setAppVersion(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_SP, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(APP_VERSION, getCurrAppVersion(context));
+        editor.commit();
+    }
+
+    private static String getOldAppVersion(Context context) {
+        SharedPreferences sharedPreferences = context.getSharedPreferences(SHARED_SP, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(APP_VERSION, "");
+    }
+
+    private static String getCurrAppVersion(Context context) {
+        PackageInfo packageInfo = null;
+        try {
+            packageInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+        String version = packageInfo.versionName;
+        return version;
     }
 }

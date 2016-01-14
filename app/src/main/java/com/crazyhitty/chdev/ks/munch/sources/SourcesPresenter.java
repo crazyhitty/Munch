@@ -114,6 +114,10 @@ public class SourcesPresenter implements ISourcePresenter, OnSourceSavedListener
         modifyDialog.show();
     }
 
+    public void deleteSource(SourceItem sourceItem) {
+        mSourceInteractor.deleteSourceItemFromDb(SourcesPresenter.this, sourceItem);
+    }
+
     @Override
     public void onSuccess(String message) {
         mISourceView.dataSourceSaved(message);

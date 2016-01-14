@@ -116,7 +116,24 @@ public class DatabaseUtil {
         String[] columnNames = mContext.getResources().getStringArray(R.array.feed_table_columns);
 
         DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
+
         Cursor cursor = databaseOperations.retrieveAllFromDB("feed_table");
+
+        /*switch (condition){
+            case "no_order":
+                cursor = databaseOperations.retrieveAllFromDB("feed_table");
+                break;
+            case "alphabetical_feeds":
+                cursor = databaseOperations.retrieveAllFromDBCondition("feed_table", "ORDER BY item_name");
+                break;
+            case "alphabetical_sources":
+                cursor = databaseOperations.retrieveAllFromDBCondition("feed_table", "ORDER BY item_source");
+                break;
+            case "pub_date":
+                cursor = databaseOperations.retrieveAllFromDBCondition("feed_table", "ORDER BY item_pub_date");
+                break;
+        }*/
+
         if (cursor != null && cursor.getCount() != 0) {
             if (cursor.moveToFirst()) {
                 do {

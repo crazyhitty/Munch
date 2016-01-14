@@ -48,6 +48,7 @@
         <item>Music</item>
         <item>National</item>
         <item>Politics</item>
+        <item>Productivity</item>
         <item>Programming</item>
         <item>Research</item>
         <item>Science</item>
@@ -55,6 +56,7 @@
         <item>Space</item>
         <item>Sports</item>
         <item>Technology</item>
+        <item>Unknown</item>
     </string-array>
 
     <string-array name="category_drawables">
@@ -80,6 +82,7 @@
         <item>@drawable/ic_music_24dp</item>
         <item>@drawable/ic_national_24dp</item>
         <item>@drawable/ic_politics_24dp</item>
+        <item>@drawable/ic_productivity_24dp</item>
         <item>@drawable/ic_programming_24dp</item>
         <item>@drawable/ic_research_24dp</item>
         <item>@drawable/ic_science_24dp</item>
@@ -87,6 +90,7 @@
         <item>@drawable/ic_space_24dp</item>
         <item>@drawable/ic_sports_24dp</item>
         <item>@drawable/ic_technology_24dp</item>
+        <item>@drawable/ic_unknown_24dp</item>
     </string-array>
 
     <string-array name="sources_test">
@@ -148,6 +152,15 @@
     <string name="modify">Modify</string>
     <string name="delete">Delete</string>
     <string name="title_activity_settings">Settings</string>
+    <string name="sort">Sort</string>
+    <string name="sort_feeds">Sort feeds</string>
+
+    <string-array name="sort_feeds_types">
+        <item>Randomly</item>
+        <item>Feed title</item>
+        <item>Category</item>
+        <item>Publish Date</item>
+    </string-array>
 
     <!-- Strings related to Settings -->
     <string name="perf_ui">User Interface</string>
@@ -193,17 +206,31 @@
     <string name="perf_feeds_anim">Enable Feeds Animation</string>
     <string name="perf_feeds_anim_desc_enabled">If disabled, feeds won\'t animate, this might reduce lag</string>
     <string name="perf_feeds_anim_desc_disabled">If enabled, feeds will animate, this might generate lag</string>
-    <string name="perf_feeds_anim_key">feeds_anim_key</string>
+    <string name="perf_feeds_anim_key">perf_feeds_anim_key</string>
 
     <string name="perf_sources_anim">Enable Sources Animation</string>
     <string name="perf_sources_anim_desc_enabled">If disabled, sources won\'t animate, this might reduce lag</string>
     <string name="perf_sources_anim_desc_disabled">If enabled, sources will animate, this might generate lag</string>
-    <string name="perf_sources_anim_key">sources_anim_key</string>
+    <string name="perf_sources_anim_key">perf_sources_anim_key</string>
 
     <string name="perf_circular_reveal">Enable Circular Reveal Animation</string>
     <string name="perf_circular_reveal_desc_enabled">If disabled, you won\'t see a circular reveal animation on add sources screen</string>
     <string name="perf_circular_reveal_desc_disabled">If enabled, you will see a circular reveal animation on add sources screen</string>
-    <string name="perf_circular_reveal_key">circular_reveal_key</string>
+    <string name="perf_circular_reveal_key">perf_circular_reveal_key</string>
+
+    <string name="perf_curated_feeds">Curated Feeds</string>
+
+    <string name="perf_curated_feeds_import">Import Curated feeds</string>
+    <string name="perf_curated_feeds_import_desc">Import some of the best Rss feed sources available over the internet</string>
+    <string name="perf_curated_feeds_import_key">perf_curated_feeds_import_key</string>
+
+    <string-array name="perf_curated_feeds_import_empty" />
+
+    <string name="perf_curated_feeds_submit">Submit Curated feeds</string>
+    <string name="perf_curated_feeds_submit_desc">Submit your own Rss feed sources and help in improving the current curated list</string>
+    <string name="perf_curated_feeds_submit_key">perf_curated_feeds_submit_key</string>
+
+    <string-array name="perf_curated_feeds_submit_empty" />
 
     <string name="perf_theme">Manage themes</string>
     <string name="perf_theme_desc">Change the system theme</string>
@@ -223,17 +250,39 @@
     <string name="perf_in_app_browser">Enable In-App Browser</string>
     <string name="perf_in_app_browser_desc_enabled">If disabled, application will open feed links via standard browser</string>
     <string name="perf_in_app_browser_desc_disabled">If enabled, application will open feed links via in-app browser(requires chrome v45+)</string>
-    <string name="perf_in_app_browser_key">in_app_browser</string>
+    <string name="perf_in_app_browser_key">perf_in_app_browser_key</string>
+
+    <string name="perf_import_opml">Import Opml files</string>
+    <string name="perf_import_opml_desc">Import custom feed sources from Opml files, either from a url or a file</string>
+    <string name="perf_import_opml_key">perf_import_opml_files</string>
+    <string name="perf_import_opml_default_value">Light</string>
+
+    <string-array name="perf_import_opml_entries">
+        <item>From url</item>
+        <item>From file</item>
+    </string-array>
+
+    <string-array name="perf_import_opml_values">
+        <item>From url</item>
+        <item>From file</item>
+    </string-array>
+
 
     <string name="perf_cache">Enable Feeds Cache</string>
     <string name="perf_cache_desc_enabled">If disabled, application will not store the feeds downloaded in the database</string>
     <string name="perf_cache_desc_disabled">If enabled, application will store the feeds downloaded in the database</string>
-    <string name="perf_cache_key">feeds_cache</string>
+    <string name="perf_cache_key">perf_feeds_cache</string>
 
     <string name="perf_system">System</string>
     <string name="perf_reset_db">Reset Database</string>
     <string name="perf_reset_db_desc">Restore the database to its initial state</string>
     <string name="perf_reset_db_message">This will remove all the values from the database. This incudes deleting your sources, archives and feeds.</string>
+
+    <string name="perf_misc">Miscellaneous</string>
+
+    <string name="perf_feeds_not_working">Feeds not working?</string>
+    <string name="perf_feeds_not_working_desc">Not every Rss source will work correctly with the app, so inorder to make it work you need to modify your feeds. Tap here to view the tutorial</string>
+    <string name="perf_feeds_not_working_key">perf_feeds_not_working_key</string>
 
     <string name="swipe_down">Swipe down to refresh</string>
     <string name="archive_empty">Archive is empty</string>
@@ -280,6 +329,14 @@
     <string name="github_source_code">https://github.com/crazyhitty/Munch</string>
     <string name="licence">Licence</string>
     <string name="licence_desc"><b>The MIT License (MIT)</b>\n\n<b>Copyright (c) 2015 Kartik Sharma</b>\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</string>
+    <string name="enter_url">Enter Url</string>
+    <string name="url">Url</string>
+    <string name="enter_url_here">Enter url here</string>
+    <string name="get_feeds">Get feeds</string>
+    <string name="select_feeds">Select Feeds</string>
+    <string name="import_str">Import</string>
+    <string name="change_log">Change Log</string>
+    <string name="change_log_desc"><b>Version 0.30</b>\n\nAdded Opml integration.\n\nAdded <i>Read External Storage</i> permission so that user can import opml feeds via file stored in SD Card or internal storage.\n\nAdded Curated feeds and option to submit your own feeds to the curated list.\n\nAdded Sorting option, now user can sort the feeds by random, title, category and date.\n\nMinor bug fixes.\n\n<b>Version 0.22</b>\n\nMade circular reveal animation optional, you can disable it in settings.\n\n<b>Version 0.21</b>\n\nFixed a bug in which white screen was shown on splash screen.\n\nAdded the option to rate, view source code and view licence in About screen.\n\n<b>Version 0.20</b>\n\nAdded dark theme.\n\n<b>Version 0.11</b>\n\nRemoved duplicate entries in settings menu.\n\n<b>Version 0.10</b>\n\nReleased initial version.</string>
 
     <string-array name="library_names">
         <item>Butter Knife</item>
@@ -289,6 +346,7 @@
         <item>Clans/FAB</item>
         <item>Glide</item>
         <item>MaterialEditText</item>
+        <item>MaterialProgressBar</item>
     </string-array>
 
     <string-array name="library_descs">
@@ -299,6 +357,7 @@
         <item>Yet another implementation of Floating Action Button for Android.</item>
         <item>Glide is fast and efficient image loading library for Android that wraps image downloading, resizing, memory and disk caching, and bitmap recycling into one simple and easy to use interface. By default, Glide includes an implementation for fetching images over http based on Google\'s Volley project for fast, parallelized network operations on Android.</item>
         <item>MaterialEditText is an EditText in Material Design, with more features that Google Material Design Spec has introduced.</item>
+        <item>Material Design ProgressBar with consistent appearance on Android 4.0+ .</item>
     </string-array>
 
     <string-array name="library_creators">
@@ -309,6 +368,7 @@
         <item>Dmytro Tarianyk</item>
         <item>Bump Technologies</item>
         <item>Kai Zhu</item>
+        <item>Zhang Hai</item>
     </string-array>
 
     <string-array name="library_links">
@@ -319,6 +379,7 @@
         <item>https://github.com/Clans/FloatingActionButton</item>
         <item>https://github.com/bumptech/glide</item>
         <item>https://github.com/rengwuxian/MaterialEditText</item>
+        <item>https://github.com/DreaminginCodeZH/MaterialProgressBar</item>
     </string-array>
 
 </resources>

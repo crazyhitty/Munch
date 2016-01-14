@@ -64,7 +64,7 @@
     </style>
 
     <style name="AppThemeCustom.NoActionBar.Purple">
-        <item name="colorPrimary">@color/md_purple_500</item>
+        <item name="colorPrimary">@color/md_deep_purple_500</item>
     </style>
 
     <style name="AppThemeCustom.NoActionBar.Grey">
@@ -81,7 +81,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/darkColorPrimary</item>
         <item name="colorPrimaryDark">@color/darkColorPrimaryDark</item>
-        <item name="colorAccent">@color/darkColorAccent</item>
+        <item name="colorAccent">@color/md_teal_200</item>
         <item name="android:windowBackground">@color/darkColorBackground</item>
         <item name="android:colorBackground">@color/darkColorBackground</item>
         <item name="android:textColorPrimary">@color/white</item>
@@ -144,7 +144,7 @@
     </style>
 
     <style name="DarkAppThemeCustom.NoActionBar.Purple">
-        <item name="colorPrimary">@color/md_purple_500</item>
+        <item name="colorPrimary">@color/md_deep_purple_500</item>
     </style>
 
     <style name="DarkAppThemeCustom.NoActionBar.Grey">

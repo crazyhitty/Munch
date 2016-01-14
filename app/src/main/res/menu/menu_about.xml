@@ -8,13 +8,18 @@
         android:title="@string/rate"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_source_code"
+        android:id="@+id/action_change_log"
         android:orderInCategory="2"
+        android:title="@string/change_log"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_source_code"
+        android:orderInCategory="3"
         android:title="@string/source_code"
         app:showAsAction="never" />
     <item
         android:id="@+id/action_licence"
-        android:orderInCategory="2"
+        android:orderInCategory="4"
         android:title="@string/licence"
         app:showAsAction="never" />
 </menu>

@@ -131,6 +131,10 @@ public class HomeActivity extends AppCompatActivity implements ISourceView, Floa
         //set the first item enabled true
         navigationView.getMenu().getItem(0).setChecked(true);
 
+        //show changelog if user opens the app for first time
+        if (SettingsPreferences.CHANGE_LOG_DIALOG_SHOW) {
+            SettingsPreferences.showChangeLog(HomeActivity.this);
+        }
     }
 
     private void setActivityTheme() {
@@ -194,9 +198,14 @@ public class HomeActivity extends AppCompatActivity implements ISourceView, Floa
         return true;
     }
 
-    private void runIntent(Class resultActivityClass) {
-        Intent intent = new Intent(HomeActivity.this, resultActivityClass);
-        startActivity(intent);
+    private void runIntent(final Class resultActivityClass) {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent intent = new Intent(HomeActivity.this, resultActivityClass);
+                startActivity(intent);
+            }
+        }, 160);
     }
 
     private void showTitle(String title) {

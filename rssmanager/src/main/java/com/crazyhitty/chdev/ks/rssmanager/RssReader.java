@@ -125,13 +125,21 @@ public class RssReader implements OnFeedLoadListener {
         } else {
             imageUrl = null;
         }
-        String category;
+
+        String category = null;
         if (mCategories == null) {
-            category = element.select("category").first().text();
+            if (!element.select("category").isEmpty()) {
+                category = element.select("category").first().text();
+            }
         } else {
             category = mCategories[mPosition];
         }
-        String pubDate = element.select("pubDate").first().text();
+
+        String pubDate = "";
+        if (!element.select("pubDate").isEmpty()) {
+            pubDate = element.select("pubDate").first().text();
+        }
+
         int categoryImgId = mCategoryImgIds[mPosition];
 
         RssItem rssItem = new RssItem();

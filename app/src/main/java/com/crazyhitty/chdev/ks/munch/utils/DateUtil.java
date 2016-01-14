@@ -21,4 +21,10 @@ public class DateUtil {
         Date date = pubDateFormat.parse(pubDate);
         return new SimpleDateFormat("EEE, d MMM yyyy").format(date);
     }
+
+    //get Date object from pub date
+    public Date getDateObj(String pubDate) throws ParseException {
+        SimpleDateFormat pubDateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
+        return pubDateFormat.parse(pubDate);
+    }
 }

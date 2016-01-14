@@ -42,6 +42,10 @@ public class DatabaseOperations {
         return retrieveAllFromDBAsync(tableName);
     }
 
+    public Cursor retrieveAllFromDBCondition(String tableName, String condition) throws Exception {
+        return retrieveAllFromDBConditionAsync(tableName, condition);
+    }
+
     public void deleteFromDB(String tableName, String columnName, String value) throws Exception {
         deleteFromDBAsync(tableName, columnName, value);
     }
@@ -167,6 +171,16 @@ public class DatabaseOperations {
         dbAdapter.createDatabase();
         dbAdapter.open();
         String query = "SELECT * FROM " + tableName;
+        Cursor cursor = dbAdapter.selectQuery(query);
+        Log.e("DATABASE", "CURSOR RETRIEVED FROM DB");
+        return cursor;
+    }
+
+    private Cursor retrieveAllFromDBConditionAsync(String tableName, String condition) {
+        DatabaseAdapter dbAdapter = new DatabaseAdapter(mContext, mDatabaseName);
+        dbAdapter.createDatabase();
+        dbAdapter.open();
+        String query = "SELECT * FROM " + tableName + " " + condition;
         Cursor cursor = dbAdapter.selectQuery(query);
         Log.e("DATABASE", "CURSOR RETRIEVED FROM DB");
         return cursor;

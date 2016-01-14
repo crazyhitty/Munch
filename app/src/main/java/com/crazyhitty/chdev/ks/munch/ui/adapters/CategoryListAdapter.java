@@ -1,6 +1,7 @@
 package com.crazyhitty.chdev.ks.munch.ui.adapters;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.crazyhitty.chdev.ks.munch.R;
 import com.crazyhitty.chdev.ks.munch.models.CategoryItem;
+import com.crazyhitty.chdev.ks.munch.models.SettingsPreferences;
 
 import java.util.List;
 
@@ -49,6 +51,10 @@ public class CategoryListAdapter extends BaseAdapter {
 
         txtCategoryName.setText(mCategoryItems.get(i).getCategoryName());
         imgCategory.setImageDrawable(mCategoryItems.get(i).getCategoryImg());
+
+        if (!SettingsPreferences.THEME) {
+            txtCategoryName.setTextColor(ContextCompat.getColor(viewGroup.getContext(), R.color.md_grey_100));
+        }
 
         return itemView;
     }

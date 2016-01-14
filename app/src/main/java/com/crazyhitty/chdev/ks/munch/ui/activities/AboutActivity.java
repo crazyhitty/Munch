@@ -29,8 +29,6 @@ import butterknife.OnClick;
 
 public class AboutActivity extends AppCompatActivity {
 
-    private static final String EXTRA_CUSTOM_TABS_SESSION = "android.support.customtabs.extra.SESSION";
-    private static final String EXTRA_CUSTOM_TABS_TOOLBAR_COLOR = "android.support.customtabs.extra.TOOLBAR_COLOR";
     private static String EMAIL_SUBJECT = "Munch Feedback";
     private static String MESSAGE_TYPE = "message/rfc822";
     @Bind(R.id.toolbar)
@@ -179,6 +177,10 @@ public class AboutActivity extends AppCompatActivity {
             intent.setData(Uri.parse("market://details?id=com.crazyhitty.chdev.ks.munch"));
             startActivity(intent);
             return true;
+        }
+
+        if (id == R.id.action_change_log) {
+            SettingsPreferences.showChangeLog(AboutActivity.this);
         }
 
         if (id == R.id.action_source_code) {

@@ -6,6 +6,9 @@ import com.crazyhitty.chdev.ks.munch.models.FeedItem;
 import com.crazyhitty.chdev.ks.munch.models.SettingsPreferences;
 import com.crazyhitty.chdev.ks.munch.models.SourceItem;
 import com.crazyhitty.chdev.ks.munch.utils.DatabaseUtil;
+import com.crazyhitty.chdev.ks.munch.utils.comparator.FeedCategoryComparator;
+import com.crazyhitty.chdev.ks.munch.utils.comparator.FeedPubDateComparator;
+import com.crazyhitty.chdev.ks.munch.utils.comparator.FeedTitleComparator;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -71,8 +74,21 @@ public class FeedsPresenter implements IFeedsPresenter, OnFeedsLoadedListener {
 
     @Override
     public void onSuccess(List<FeedItem> feedItems, boolean loadedNewFeeds) {
-        //randomize the list
-        Collections.shuffle(feedItems, new Random(System.nanoTime()));
+        //sort the list
+        switch (SettingsPreferences.getSortingMethod(mContext)) {
+            case "random":
+                Collections.shuffle(feedItems, new Random(System.nanoTime()));
+                break;
+            case "feed_title":
+                Collections.sort(feedItems, new FeedTitleComparator());
+                break;
+            case "feed_category":
+                Collections.sort(feedItems, new FeedCategoryComparator());
+                break;
+            case "feed_pub_date":
+                Collections.sort(feedItems, new FeedPubDateComparator());
+                break;
+        }
         mIFeedsView.feedsLoaded(feedItems);
         if (loadedNewFeeds && SettingsPreferences.FEED_CACHE) {
             new DatabaseUtil(mContext).saveFeedsInDB(feedItems);

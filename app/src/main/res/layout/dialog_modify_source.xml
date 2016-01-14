@@ -11,10 +11,6 @@
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/text_size_min" />
 
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/space_small" />
-
     <EditText
         android:id="@+id/edit_text_source_name"
         android:layout_width="match_parent"
@@ -31,10 +27,6 @@
         android:text="@string/source_url"
         android:textColor="@color/colorAccent"
         android:textSize="@dimen/text_size_min" />
-
-    <Space
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/space_small" />
 
     <EditText
         android:id="@+id/edit_text_source_url"
