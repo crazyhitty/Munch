@@ -1,22 +1,82 @@
 {
-  "version": 0.11,
+  "version": 0.12,
   "release_date": "2016-01-03",
-  "last_modified": "2016-01-14",
+  "last_modified": "2016-01-23",
   "curated_feeds": [
     {
       "source_name": "Arstechnica",
-      "source_url": "http://feeds.arstechnica.com/arstechnica/index?format=xml",
+      "source_url": "http:\/\/feeds.arstechnica.com\/arstechnica\/index?format=xml",
       "source_category": "Gadgets"
     },
     {
       "source_name": "Reuters Top News",
-      "source_url": "http://feeds.reuters.com/reuters/topNews?format=xml",
+      "source_url": "http:\/\/feeds.reuters.com\/reuters\/topNews?format=xml",
       "source_category": "International"
     },
     {
       "source_name": "IGN",
-      "source_url": "http://feeds.ign.com/ign/all?format=xml",
+      "source_url": "http:\/\/feeds.ign.com\/ign\/all?format=xml",
       "source_category": "Entertainment"
+    },
+    {
+      "source_name": "vrouwelijk goddelijke",
+      "source_url": "http:\/\/feeds.feedburner.com\/HetVrouwelijkGoddelijke",
+      "source_category": "Research"
+    },
+    {
+      "source_name": "Juan Cole",
+      "source_url": "http:\/\/feeds.feedburner.com\/is\/pudp",
+      "source_category": "Politics"
+    },
+    {
+      "source_name": "FTM",
+      "source_url": "http:\/\/feeds.feedburner.com\/ftm\/eddm",
+      "source_category": "Politics"
+    },
+    {
+      "source_name": "James Petras",
+      "source_url": "http:\/\/petras.lahaine.org\/?feed=rss2",
+      "source_category": "Politics"
+    },
+    {
+      "source_name": "Craig Murray",
+      "source_url": "http:\/\/feeds.feedburner.com\/org\/zMEt",
+      "source_category": "Politics"
+    },
+    {
+      "source_name": "Leonardo Boff",
+      "source_url": "http:\/\/feeds.feedburner.com\/wordpress\/Hdbc",
+      "source_category": "Unknown"
+    },
+    {
+      "source_name": "CMI Watemaal",
+      "source_url": "http:\/\/feeds.feedburner.com\/CmiGuatemala",
+      "source_category": "Politics"
+    },
+    {
+      "source_name": "Sprengsatz",
+      "source_url": "http:\/\/feeds.feedburner.com\/Sprengsatz_dasPolitik-blogAusBerlin",
+      "source_category": "International"
+    },
+    {
+      "source_name": "Musicke & Food",
+      "source_url": "http:\/\/feeds.feedburner.com\/blogspot\/wxXcs",
+      "source_category": "Music"
+    },
+    {
+      "source_name": "cogniarchae",
+      "source_url": "http:\/\/feeds.feedburner.com\/Cogniarchae",
+      "source_category": "Research"
+    },
+    {
+      "source_name": "el salm\u00f3n",
+      "source_url": "http:\/\/feeds.feedburner.com\/ElSalmn",
+      "source_category": "Politics"
+    },
+    {
+      "source_name": "James Cockcroft",
+      "source_url": "http:\/\/feeds.feedburner.com\/JamesCockcroftsBlog-WriterProfessorRevolutionary",
+      "source_category": "Politics"
     }
   ]
 }

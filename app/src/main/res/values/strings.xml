@@ -16,6 +16,7 @@
     <string name="roboto_condensed">sans-serif-condensed</string>
     <string name="roboto">sans-serif</string>
     <string name="roboto_medium">sans-serif-medium</string>
+    <string name="monospace">monospace</string>
 
     <string name="category">Category</string>
     <string name="add_category">Add a category</string>
@@ -336,7 +337,7 @@
     <string name="select_feeds">Select Feeds</string>
     <string name="import_str">Import</string>
     <string name="change_log">Change Log</string>
-    <string name="change_log_desc"><b>Version 0.30</b>\n\nAdded Opml integration.\n\nAdded <i>Read External Storage</i> permission so that user can import opml feeds via file stored in SD Card or internal storage.\n\nAdded Curated feeds and option to submit your own feeds to the curated list.\n\nAdded Sorting option, now user can sort the feeds by random, title, category and date.\n\nMinor bug fixes.\n\n<b>Version 0.22</b>\n\nMade circular reveal animation optional, you can disable it in settings.\n\n<b>Version 0.21</b>\n\nFixed a bug in which white screen was shown on splash screen.\n\nAdded the option to rate, view source code and view licence in About screen.\n\n<b>Version 0.20</b>\n\nAdded dark theme.\n\n<b>Version 0.11</b>\n\nRemoved duplicate entries in settings menu.\n\n<b>Version 0.10</b>\n\nReleased initial version.</string>
+    <string name="change_log_desc"><b>Version 0.31</b>\n\nMinor bug fix, which was making the settings menu crash on some devices.\n\n<b>Version 0.30</b>\n\nAdded Opml integration.\n\nAdded <i>Read External Storage</i> permission so that user can import opml feeds via file stored in SD Card or internal storage.\n\nAdded Curated feeds and option to submit your own feeds to the curated list.\n\nAdded Sorting option, now user can sort the feeds by random, title, category and date.\n\nMinor bug fixes.\n\n<b>Version 0.22</b>\n\nMade circular reveal animation optional, you can disable it in settings.\n\n<b>Version 0.21</b>\n\nFixed a bug in which white screen was shown on splash screen.\n\nAdded the option to rate, view source code and view licence in About screen.\n\n<b>Version 0.20</b>\n\nAdded dark theme.\n\n<b>Version 0.11</b>\n\nRemoved duplicate entries in settings menu.\n\n<b>Version 0.10</b>\n\nReleased initial version.</string>
 
     <string-array name="library_names">
         <item>Butter Knife</item>

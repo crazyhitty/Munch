@@ -44,6 +44,7 @@
     <PreferenceCategory android:title="@string/perf_curated_feeds">
 
         <MultiSelectListPreference
+            android:defaultValue="@array/perf_curated_feeds_import_empty"
             android:dialogTitle="@string/perf_curated_feeds_import"
             android:entries="@array/perf_curated_feeds_import_empty"
             android:entryValues="@array/perf_curated_feeds_import_empty"
@@ -52,6 +53,7 @@
             android:title="@string/perf_curated_feeds_import" />
 
         <MultiSelectListPreference
+            android:defaultValue="@array/perf_curated_feeds_submit_empty"
             android:dialogTitle="@string/perf_curated_feeds_submit"
             android:entries="@array/perf_curated_feeds_submit_empty"
             android:entryValues="@array/perf_curated_feeds_submit_empty"
