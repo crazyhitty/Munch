@@ -3,7 +3,7 @@ A minimalistic, easy to use Rss reader application.
 
 <a href="https://play.google.com/store/apps/details?id=com.crazyhitty.chdev.ks.munch">
   <img alt="Get it on Google Play"
-       src="https://developer.android.com/images/brand/en_generic_rgb_wo_45.png" />
+       src="http://www.androiddocs.com/images/brand/en_app_rgb_wo_45.png" />
 </a>
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Munch-brightgreen.svg?style=flat)](http://android-arsenal.com/details/3/2955)
 
