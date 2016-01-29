@@ -97,6 +97,7 @@ public class SourceInteractor implements ISourceInteractor {
         try {
             DatabaseUtil databaseUtil = new DatabaseUtil(mContext);
             databaseUtil.deleteSourceItem(sourceItem);
+            databaseUtil.deleteFeeds(sourceItem);
             onSourcesModifyListener.onSourceDeleted(sourceItem);
         } catch (Exception e) {
             e.printStackTrace();

@@ -205,7 +205,7 @@ public class HomeActivity extends AppCompatActivity implements ISourceView, Floa
                 Intent intent = new Intent(HomeActivity.this, resultActivityClass);
                 startActivity(intent);
             }
-        }, 160);
+        }, 200);
     }
 
     private void showTitle(String title) {

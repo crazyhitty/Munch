@@ -305,7 +305,7 @@
     <string name="splash_desc_2">Scroll swiftly through the available feeds</string>
     <string name="splash_desc_3">Add your own Rss feed sources, manage them and read the articles associated with the feeds</string>
 
-    <string name="title_activity_about">AboutActivity</string>
+    <string name="title_activity_about">About</string>
     <string name="created_by">Kartik Sharma\n(Aka Chdev)</string>
     <string name="contact_dev">Contact the developer</string>
 
@@ -337,7 +337,9 @@
     <string name="select_feeds">Select Feeds</string>
     <string name="import_str">Import</string>
     <string name="change_log">Change Log</string>
-    <string name="change_log_desc"><b>Version 0.31</b>\n\nMinor bug fix, which was making the settings menu crash on some devices.\n\n<b>Version 0.30</b>\n\nAdded Opml integration.\n\nAdded <i>Read External Storage</i> permission so that user can import opml feeds via file stored in SD Card or internal storage.\n\nAdded Curated feeds and option to submit your own feeds to the curated list.\n\nAdded Sorting option, now user can sort the feeds by random, title, category and date.\n\nMinor bug fixes.\n\n<b>Version 0.22</b>\n\nMade circular reveal animation optional, you can disable it in settings.\n\n<b>Version 0.21</b>\n\nFixed a bug in which white screen was shown on splash screen.\n\nAdded the option to rate, view source code and view licence in About screen.\n\n<b>Version 0.20</b>\n\nAdded dark theme.\n\n<b>Version 0.11</b>\n\nRemoved duplicate entries in settings menu.\n\n<b>Version 0.10</b>\n\nReleased initial version.</string>
+    <string name="change_log_desc"><b>Version 0.32</b>\n\nMinor bug fixes.\n\nAdded shadow to toolbars.\n\nAdded option to delete the feed from article.\n\n<b>Version 0.31</b>\n\nMinor bug fix, which was making the settings menu crash on some devices.\n\n<b>Version 0.30</b>\n\nAdded Opml integration.\n\nAdded <i>Read External Storage</i> permission so that user can import opml feeds via file stored in SD Card or internal storage.\n\nAdded Curated feeds and option to submit your own feeds to the curated list.\n\nAdded Sorting option, now user can sort the feeds by random, title, category and date.\n\nMinor bug fixes.\n\n<b>Version 0.22</b>\n\nMade circular reveal animation optional, you can disable it in settings.\n\n<b>Version 0.21</b>\n\nFixed a bug in which white screen was shown on splash screen.\n\nAdded the option to rate, view source code and view licence in About screen.\n\n<b>Version 0.20</b>\n\nAdded dark theme.\n\n<b>Version 0.11</b>\n\nRemoved duplicate entries in settings menu.\n\n<b>Version 0.10</b>\n\nReleased initial version.</string>
+    <string name="delete_this_feed">Delete this feed</string>
+    <string name="delete_this_feed_desc">This would remove this feed from the feed list present on the home screen.</string>
 
     <string-array name="library_names">
         <item>Butter Knife</item>

@@ -282,10 +282,20 @@ public class DatabaseUtil {
         databaseOperations.deleteFromDB("article_table", "article_name", feedItem.getItemTitle());
     }
 
+    public void deleteFeeds(SourceItem sourceItem) throws Exception {
+        DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
+        databaseOperations.deleteFromDB("feed_table", "item_source", sourceItem.getSourceName());
+    }
+
     public void deleteAll() throws Exception {
         DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
         databaseOperations.deleteAllFromDB("source_table");
         databaseOperations.deleteAllFromDB("article_table");
         databaseOperations.deleteAllFromDB("feed_table");
+    }
+
+    public void deleteSelectedFeeds(FeedItem feedItem) throws Exception {
+        DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
+        databaseOperations.deleteFromDB("feed_table", "item_name", feedItem.getItemTitle());
     }
 }

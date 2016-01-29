@@ -14,20 +14,26 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.crazyhitty.chdev.ks.munch.R;
 import com.crazyhitty.chdev.ks.munch.article.ArticlePresenter;
 import com.crazyhitty.chdev.ks.munch.article.IArticleView;
+import com.crazyhitty.chdev.ks.munch.feeds.FeedsPresenter;
+import com.crazyhitty.chdev.ks.munch.feeds.IFeedsView;
 import com.crazyhitty.chdev.ks.munch.models.FeedItem;
 import com.crazyhitty.chdev.ks.munch.models.SettingsPreferences;
 import com.crazyhitty.chdev.ks.munch.utils.NetworkConnectionUtil;
 import com.crazyhitty.chdev.ks.munch.utils.WebsiteIntentUtil;
 
+import java.util.List;
+
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class ArticleActivity extends AppCompatActivity implements IArticleView {
+public class ArticleActivity extends AppCompatActivity implements IArticleView, IFeedsView {
 
     private static final String EXTRA_CUSTOM_TABS_SESSION = "android.support.customtabs.extra.SESSION";
     private static final String EXTRA_CUSTOM_TABS_TOOLBAR_COLOR = "android.support.customtabs.extra.TOOLBAR_COLOR";
@@ -47,6 +53,7 @@ public class ArticleActivity extends AppCompatActivity implements IArticleView {
     ImageView imgArticle;
     private boolean mSaved = false;
     private ArticlePresenter mArticlePresenter;
+    private FeedsPresenter mFeedsPresenter;
 
 
     @Override
@@ -88,6 +95,11 @@ public class ArticleActivity extends AppCompatActivity implements IArticleView {
         //load article presenter
         if (mArticlePresenter == null) {
             mArticlePresenter = new ArticlePresenter(ArticleActivity.this, this);
+        }
+
+        //load feeds presenter
+        if (mFeedsPresenter == null) {
+            mFeedsPresenter = new FeedsPresenter(ArticleActivity.this, this);
         }
 
         //only load the data online if this activity was opened from FeedsFragment
@@ -290,6 +302,38 @@ public class ArticleActivity extends AppCompatActivity implements IArticleView {
             return true;
         }
 
+        if (id == R.id.action_delete) {
+            MaterialDialog confirmDeleteDialog = new MaterialDialog.Builder(this)
+                    .title(R.string.delete_this_feed)
+                    .content(R.string.delete_this_feed_desc)
+                    .iconRes(R.drawable.ic_delete_24dp)
+                    .positiveText(R.string.delete)
+                    .negativeText(R.string.cancel)
+                    .onPositive(new MaterialDialog.SingleButtonCallback() {
+                        @Override
+                        public void onClick(MaterialDialog materialDialog, DialogAction dialogAction) {
+                            mFeedsPresenter.deleteSelectedFeed(getFeedItem());
+                            Intent intent = new Intent(ArticleActivity.this, HomeActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                    }).build();
+            confirmDeleteDialog.show();
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
+    }
+
+    //no use
+    @Override
+    public void feedsLoaded(List<FeedItem> feedItems) {
+
+    }
+
+    //no use
+    @Override
+    public void loadingFailed(String message) {
+
     }
 }

@@ -4,7 +4,6 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
     <style name="AppThemeCustom" parent="Theme.AppCompat.Light.NoActionBar">
@@ -15,6 +14,5 @@
         <item name="android:textColorSecondary">@color/white</item>
         <item name="android:fontFamily">@string/roboto_condensed</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 </resources>

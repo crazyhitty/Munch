@@ -1,3 +1,7 @@
+<b>Version 0.32</b>\n\n
+Minor bug fixes.\n\n
+Added shadow to toolbars.\n\n
+Added option to delete the feed from article.\n\n
 <b>Version 0.31</b>\n\n
 Minor bug fix, which was making the settings menu crash on some devices.\n\n
 <b>Version 0.30</b>\n\n

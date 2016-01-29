@@ -72,6 +72,16 @@ public class FeedsPresenter implements IFeedsPresenter, OnFeedsLoadedListener {
         }
     }
 
+    public void deleteSelectedFeed(FeedItem feedItem) {
+        DatabaseUtil databaseUtil = new DatabaseUtil(mContext);
+        try {
+            databaseUtil.deleteSelectedFeeds(feedItem);
+        } catch (Exception e) {
+            e.printStackTrace();
+            mIFeedsView.loadingFailed(e.getMessage());
+        }
+    }
+
     @Override
     public void onSuccess(List<FeedItem> feedItems, boolean loadedNewFeeds) {
         //sort the list
