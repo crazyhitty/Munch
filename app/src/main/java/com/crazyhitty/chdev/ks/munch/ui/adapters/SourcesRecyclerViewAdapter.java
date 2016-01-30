@@ -56,9 +56,10 @@ public class SourcesRecyclerViewAdapter extends RecyclerView.Adapter<SourcesRecy
             setAnimation(holder.mItemView, position);
         }
 
-        //set card background color
+        //set card background color and other things according to dark theme
         if (!SettingsPreferences.THEME) {
             holder.mCardSource.setCardBackgroundColor(ContextCompat.getColor(mContext, R.color.darkColorAccent));
+            holder.mImgCategory.setColorFilter(ContextCompat.getColor(mContext, R.color.md_grey_300));
         } else {
             //looks ugly
             //holder.mCardSource.setCardBackgroundColor(ContextCompat.getColor(mContext, new ColorsUtil().getRandomColor()));

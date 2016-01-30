@@ -1,6 +1,7 @@
 package com.crazyhitty.chdev.ks.munch.sources;
 
 import android.content.Context;
+import android.support.v4.content.ContextCompat;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
@@ -12,6 +13,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import com.crazyhitty.chdev.ks.munch.R;
 import com.crazyhitty.chdev.ks.munch.models.Categories;
 import com.crazyhitty.chdev.ks.munch.models.CategoryItem;
+import com.crazyhitty.chdev.ks.munch.models.SettingsPreferences;
 import com.crazyhitty.chdev.ks.munch.models.SourceItem;
 import com.crazyhitty.chdev.ks.munch.ui.adapters.CategoryListAdapter;
 
@@ -88,6 +90,11 @@ public class SourcesPresenter implements ISourcePresenter, OnSourceSavedListener
         mETxtSourceUrl.setText(sourceItem.getSourceUrl());
         mTxtCategory.setText(sourceItem.getSourceCategoryName());
         mImgCategory.setImageResource(new Categories(context).getDrawableId(sourceItem.getSourceCategoryName()));
+
+        //add a white color filter to the images if dark theme is selected
+        if (!SettingsPreferences.THEME) {
+            mImgCategory.setColorFilter(ContextCompat.getColor(context, R.color.md_grey_100));
+        }
 
         mFrameCategory.setOnClickListener(new View.OnClickListener() {
             @Override

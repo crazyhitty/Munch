@@ -52,8 +52,10 @@ public class CategoryListAdapter extends BaseAdapter {
         txtCategoryName.setText(mCategoryItems.get(i).getCategoryName());
         imgCategory.setImageDrawable(mCategoryItems.get(i).getCategoryImg());
 
+        //add a white color filter to the images if dark theme is selected
         if (!SettingsPreferences.THEME) {
             txtCategoryName.setTextColor(ContextCompat.getColor(viewGroup.getContext(), R.color.md_grey_100));
+            imgCategory.setColorFilter(ContextCompat.getColor(viewGroup.getContext(), R.color.md_grey_100));
         }
 
         return itemView;

@@ -1,3 +1,6 @@
+<b>Version 0.33</b>\n\n
+Added white icons in dark theme(only in category list and sources list) so they are easier to see.\n\n
+Removed shadow from toolbars as it was glitching in dark theme.\n\n
 <b>Version 0.32</b>\n\n
 Minor bug fixes.\n\n
 Added shadow to toolbars.\n\n
