@@ -8,8 +8,8 @@ android {
         applicationId "com.crazyhitty.chdev.ks.munch"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 11
-        versionName "0.40"
+        versionCode 12
+        versionName "0.41"
     }
     buildTypes {
         release {

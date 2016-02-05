@@ -86,6 +86,7 @@ public class ArticleInteractor implements IArticleInteractor {
         try {
             DatabaseUtil databaseUtil = new DatabaseUtil(context);
             databaseUtil.deleteArticle(feedItem);
+            databaseUtil.removeDescFromFeed(feedItem);
             onArticleRemoveListener.onArticleDeleted("deleted");
         } catch (Exception e) {
             e.printStackTrace();

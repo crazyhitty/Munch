@@ -111,13 +111,13 @@ public class ArticleActivity extends AppCompatActivity implements IArticleView, 
             } else {
                 NetworkConnectionUtil.showNoNetworkDialog(ArticleActivity.this);
             }
-        } else if (feedItem.getItemWebDescSync().isEmpty()) {
+        } else {
             mSaved = true;
             fabArchive.setImageResource(R.drawable.ic_archive_done_24dp);
             txtContent.setText(feedItem.getItemWebDesc());
-        } else {
+        }/* else if(!feedItem.getItemWebDescSync().isEmpty()){
             txtContent.setText(feedItem.getItemWebDescSync());
-        }
+        }*/
     }
 
     private void setFontSize() {

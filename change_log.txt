@@ -1,3 +1,5 @@
+<b>Version 0.41</b>\n\n
+Minor bug fixes.\n\n
 <b>Version 0.40</b>\n\n
 Added sync feature. Now you can synchronize feeds in background and application will save all of the data for offline reading.\n\n
 <b>Version 0.33</b>\n\n

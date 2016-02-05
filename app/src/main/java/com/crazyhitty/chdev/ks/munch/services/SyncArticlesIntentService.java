@@ -113,7 +113,9 @@ public class SyncArticlesIntentService extends IntentService {
                     FeedItem feedItem = new FeedItem();
                     feedItem.setItemLink(links[position]);
                     feedItem.setItemWebDescSync(body);
-                    new DatabaseUtil(this).saveFeedArticleDesc(feedItem);
+                    DatabaseUtil databaseUtil = new DatabaseUtil(this);
+                    databaseUtil.saveFeedArticleDesc(feedItem);
+                    databaseUtil.saveArticle(databaseUtil.getFeedByLink(links[position]), feedItem.getItemWebDescSync());
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

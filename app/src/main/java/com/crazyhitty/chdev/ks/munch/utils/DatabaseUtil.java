@@ -358,4 +358,11 @@ public class DatabaseUtil {
         }
         return links;
     }
+
+    public void removeDescFromFeed(FeedItem feedItem) throws Exception {
+        String[] columnNames = new String[]{"item_desc_web"};
+        String[] values = new String[]{""};
+        DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
+        databaseOperations.editDataInDB("feed_table", columnNames, values, "WHERE item_link='" + feedItem.getItemLink() + "'");
+    }
 }
