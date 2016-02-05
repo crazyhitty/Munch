@@ -1,5 +1,6 @@
 package com.crazyhitty.chdev.ks.munch.ui.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -23,6 +24,7 @@ import com.crazyhitty.chdev.ks.munch.feeds.FeedsPresenter;
 import com.crazyhitty.chdev.ks.munch.feeds.IFeedsView;
 import com.crazyhitty.chdev.ks.munch.models.FeedItem;
 import com.crazyhitty.chdev.ks.munch.models.SettingsPreferences;
+import com.crazyhitty.chdev.ks.munch.services.SyncArticlesIntentService;
 import com.crazyhitty.chdev.ks.munch.ui.adapters.FeedsRecyclerViewAdapter;
 import com.crazyhitty.chdev.ks.munch.utils.FadeAnimationUtil;
 import com.crazyhitty.chdev.ks.munch.utils.NetworkConnectionUtil;
@@ -166,6 +168,12 @@ public class FeedsFragment extends Fragment implements IFeedsView, SwipeRefreshL
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
+
+        if (id == R.id.action_sync) {
+            Intent intent = new Intent(getActivity(), SyncArticlesIntentService.class);
+            //intent.putExtra(SyncArticlesIntentService.EXTRA_ARTICLE_LINKS, )
+            getActivity().startService(intent);
+        }
 
         if (id == R.id.action_sort) {
             MaterialDialog sortDialog = new MaterialDialog.Builder(getActivity())

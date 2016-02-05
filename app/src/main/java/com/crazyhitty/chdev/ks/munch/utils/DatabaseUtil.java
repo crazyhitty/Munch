@@ -101,7 +101,8 @@ public class DatabaseUtil {
                     , feedItem.getItemSource()
                     , feedItem.getItemSourceUrl()
                     , feedItem.getItemPubDate()
-                    , String.valueOf(feedItem.getItemCategoryImgId())};
+                    , String.valueOf(feedItem.getItemCategoryImgId())
+                    , ""};
             try {
                 databaseOperations.saveDataInDB("feed_table", columnNames, values);
             } catch (Exception e) {
@@ -147,7 +148,7 @@ public class DatabaseUtil {
                     feedItem.setItemSourceUrl(cursor.getString(cursor.getColumnIndex(columnNames[6])));
                     feedItem.setItemPubDate(cursor.getString(cursor.getColumnIndex(columnNames[7])));
                     feedItem.setItemCategoryImgId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(columnNames[8]))));
-
+                    feedItem.setItemWebDesc(cursor.getString(cursor.getColumnIndex(columnNames[9])));
                     feedItems.add(feedItem);
                 } while (cursor.moveToNext());
             }
@@ -179,13 +180,44 @@ public class DatabaseUtil {
                     feedItem.setItemSourceUrl(cursor.getString(cursor.getColumnIndex(columnNames[6])));
                     feedItem.setItemPubDate(cursor.getString(cursor.getColumnIndex(columnNames[7])));
                     feedItem.setItemCategoryImgId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(columnNames[8]))));
-
+                    feedItem.setItemWebDesc(cursor.getString(cursor.getColumnIndex(columnNames[9])));
                     feedItems.add(feedItem);
                 } while (cursor.moveToNext());
             }
         }
 
         return feedItems;
+    }
+
+    public FeedItem getFeedByLink(String link) throws Exception {
+        FeedItem feedItem = new FeedItem();
+
+        String[] columnNames = mContext.getResources().getStringArray(R.array.feed_table_columns);
+
+        DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
+
+        String condition = "WHERE item_link='" + link + "'";
+
+        Cursor cursor = databaseOperations.retrieveFromDBCondition("feed_table", columnNames, condition);
+        if (cursor != null && cursor.getCount() != 0) {
+            if (cursor.moveToFirst()) {
+                do {
+                    feedItem.setItemTitle(cursor.getString(cursor.getColumnIndex(columnNames[0])));
+                    feedItem.setItemDesc(cursor.getString(cursor.getColumnIndex(columnNames[1])));
+                    feedItem.setItemLink(cursor.getString(cursor.getColumnIndex(columnNames[2])));
+                    feedItem.setItemImgUrl(cursor.getString(cursor.getColumnIndex(columnNames[3])));
+                    feedItem.setItemCategory(cursor.getString(cursor.getColumnIndex(columnNames[4])));
+                    feedItem.setItemSource(cursor.getString(cursor.getColumnIndex(columnNames[5])));
+                    feedItem.setItemSourceUrl(cursor.getString(cursor.getColumnIndex(columnNames[6])));
+                    feedItem.setItemPubDate(cursor.getString(cursor.getColumnIndex(columnNames[7])));
+                    feedItem.setItemCategoryImgId(Integer.parseInt(cursor.getString(cursor.getColumnIndex(columnNames[8]))));
+                    feedItem.setItemWebDesc(cursor.getString(cursor.getColumnIndex(columnNames[9])));
+                    break;
+                } while (cursor.moveToNext());
+            }
+        }
+
+        return feedItem;
     }
 
     public void deleteAllFeeds() throws Exception {
@@ -297,5 +329,33 @@ public class DatabaseUtil {
     public void deleteSelectedFeeds(FeedItem feedItem) throws Exception {
         DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
         databaseOperations.deleteFromDB("feed_table", "item_name", feedItem.getItemTitle());
+    }
+
+    public void saveFeedArticleDesc(FeedItem feedItem) throws Exception {
+        /*String[] columnNames = mContext.getResources().getStringArray(R.array.feed_table_columns);
+        String[] values = {feedItem.getItemTitle()
+                , feedItem.getItemDesc()
+                , feedItem.getItemLink()
+                , feedItem.getItemImgUrl()
+                , feedItem.getItemCategory()
+                , feedItem.getItemSource()
+                , feedItem.getItemSourceUrl()
+                , feedItem.getItemPubDate()
+                , String.valueOf(feedItem.getItemCategoryImgId())
+                , null};*/
+        String[] columnNames = new String[]{"item_desc_web"};
+        String[] values = new String[]{feedItem.getItemWebDescSync()};
+        DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
+        databaseOperations.editDataInDB("feed_table", columnNames, values, "WHERE item_link='" + feedItem.getItemLink() + "'");
+    }
+
+    public String[] getFeedLinks() throws Exception {
+        DatabaseOperations databaseOperations = new DatabaseOperations(mContext, "munch_db.sqlite");
+        List<String> itemLinks = databaseOperations.retrieveFromDB("feed_table", "item_link");
+        String[] links = new String[itemLinks.size()];
+        for (int i = 0; i < itemLinks.size(); i++) {
+            links[i] = itemLinks.get(i);
+        }
+        return links;
     }
 }

@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.crazyhitty.chdev.ks.munch">
 
+    <uses-sdk tools:overrideLibrary="android.support.customtabs" />
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-
-    <uses-sdk tools:overrideLibrary="android.support.customtabs" />
 
     <application
         android:allowBackup="true"
@@ -56,6 +56,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.crazyhitty.chdev.ks.munch.ui.activities.HomeActivity" />
         </activity>
+
+        <service
+            android:name=".services.SyncArticlesIntentService"
+            android:exported="false" />
+
+        <receiver
+            android:name=".receivers.SyncArticlesReceiver"
+            android:enabled="true"
+            android:exported="true"></receiver>
     </application>
 
 </manifest>

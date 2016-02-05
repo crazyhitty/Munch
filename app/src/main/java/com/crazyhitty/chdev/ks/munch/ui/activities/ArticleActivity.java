@@ -111,10 +111,12 @@ public class ArticleActivity extends AppCompatActivity implements IArticleView, 
             } else {
                 NetworkConnectionUtil.showNoNetworkDialog(ArticleActivity.this);
             }
-        } else {
+        } else if (feedItem.getItemWebDescSync().isEmpty()) {
             mSaved = true;
             fabArchive.setImageResource(R.drawable.ic_archive_done_24dp);
             txtContent.setText(feedItem.getItemWebDesc());
+        } else {
+            txtContent.setText(feedItem.getItemWebDescSync());
         }
     }
 
@@ -144,6 +146,7 @@ public class ArticleActivity extends AppCompatActivity implements IArticleView, 
         feedItem.setItemSource(bundle.getString("source", ""));
         feedItem.setItemSourceUrl(bundle.getString("source_url", ""));
         feedItem.setItemWebDesc(bundle.getString("article_content", ""));
+        feedItem.setItemWebDescSync(bundle.getString("sync_desc", ""));
         return feedItem;
     }
 

@@ -4,7 +4,7 @@ package com.crazyhitty.chdev.ks.munch.models;
  * Created by Kartik_ch on 11/5/2015.
  */
 public class FeedItem {
-    private String itemTitle, itemDesc, itemSourceUrl, itemLink, itemImgUrl, itemCategory, itemSource, itemPubDate, itemWebDesc;
+    private String itemTitle, itemDesc, itemSourceUrl, itemLink, itemImgUrl, itemCategory, itemSource, itemPubDate, itemWebDesc, itemWebDescSync;
     private int itemCategoryImgId, itemBgId;
 
     public String getItemTitle() {
@@ -117,5 +117,13 @@ public class FeedItem {
 
     public void setItemWebDesc(String itemWebDesc) {
         this.itemWebDesc = itemWebDesc;
+    }
+
+    public String getItemWebDescSync() {
+        return itemWebDescSync;
+    }
+
+    public void setItemWebDescSync(String itemWebDescSync) {
+        this.itemWebDescSync = itemWebDescSync;
     }
 }

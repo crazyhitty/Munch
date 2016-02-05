@@ -62,7 +62,7 @@ public class DatabaseOperations {
         String updatedValues = "";
 
         for (int i = 0; i < columnNames.length; i++) {
-            updatedValues += columnNames[i] + "='" + values[i] + "',";
+            updatedValues += columnNames[i] + "='" + values[i].replace("'", "''") + "',";
         }
 
         updatedValues = updatedValues.substring(0, updatedValues.length() - 1);

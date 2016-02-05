@@ -177,6 +177,7 @@ public class FeedsRecyclerViewAdapter extends RecyclerView.Adapter<FeedsRecycler
             bundle.putString("source_url", feedItem.getItemSourceUrl());
             bundle.putInt("category_bg_img_id", feedItem.getItemBgId());
             bundle.putString("article_content", feedItem.getItemWebDesc());
+            bundle.putString("sync_desc", feedItem.getItemWebDesc());
             return bundle;
         }
 
