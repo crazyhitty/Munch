@@ -85,7 +85,7 @@ public class SettingsActivity extends AppCompatActivity implements FileChooserDi
 
         getFragmentManager().beginTransaction().replace(R.id.frame_layout_settings, new SettingsFragment()).commit();
 
-        sFileChooserDialog = new FileChooserDialog.Builder(this)
+        sFileChooserDialog = new FileChooserDialog.Builder(SettingsActivity.this)
                 .cancelButton(R.string.cancel)
                 .build();
     }
@@ -106,7 +106,7 @@ public class SettingsActivity extends AppCompatActivity implements FileChooserDi
     }
 
     @Override
-    public void onFileSelection(File file) {
+    public void onFileSelection(FileChooserDialog dialog, File file) {
         ImportOpmlPresenter.onFileSelected(file);
     }
 

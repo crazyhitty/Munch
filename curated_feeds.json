@@ -1,7 +1,7 @@
 {
-  "version": 0.12,
+  "version": 0.13,
   "release_date": "2016-01-03",
-  "last_modified": "2016-01-23",
+  "last_modified": "2016-02-09",
   "curated_feeds": [
     {
       "source_name": "Arstechnica",
@@ -77,6 +77,16 @@
       "source_name": "James Cockcroft",
       "source_url": "http:\/\/feeds.feedburner.com\/JamesCockcroftsBlog-WriterProfessorRevolutionary",
       "source_category": "Politics"
+    },
+    {
+      "source_name": "BBC news ",
+      "source_url": "http:\/\/feeds.bbci.co.uk\/news\/rss.xml?edition=uk#",
+      "source_category": "International"
+    },
+    {
+      "source_name": "Express and star ",
+      "source_url": "http:\/\/www.expressandstar.com\/news\/feed\/",
+      "source_category": "International"
     }
   ]
 }
