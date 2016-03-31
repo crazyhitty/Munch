@@ -31,7 +31,7 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentLeft="true"
                     android:layout_alignParentTop="true"
-                    android:src="@drawable/ic_economics_24dp" />
+                    android:icon="@drawable/ic_economics_24dp" />
 
                 <TextView
                     android:id="@+id/text_view_category"
