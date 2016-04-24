@@ -9,6 +9,9 @@ import java.util.Date;
  */
 public class DateUtil {
     private String date;
+    String formatRfc2822 = "EEE, dd MMM yyyy HH:mm:ss Z";
+    String formatLocal = "EEE, d MMM yyyy";
+
 
     public String getCurrDate() {
         date = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss").format(new Date());
@@ -17,14 +20,20 @@ public class DateUtil {
 
     //converts rss publish date into a readable format
     public String getDate(String pubDate) throws ParseException {
-        SimpleDateFormat pubDateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
-        Date date = pubDateFormat.parse(pubDate);
-        return new SimpleDateFormat("EEE, d MMM yyyy").format(date);
+        Date date = getDateObj(pubDate);
+        return new SimpleDateFormat(formatLocal).format(date);
     }
 
     //get Date object from pub date
     public Date getDateObj(String pubDate) throws ParseException {
-        SimpleDateFormat pubDateFormat = new SimpleDateFormat("EEE, d MMM yyyy");
-        return pubDateFormat.parse(pubDate);
+        SimpleDateFormat pubDateFormat = new SimpleDateFormat(formatRfc2822, Locale.ENGLISH); //rss spec
+        Date date = null;
+        try {
+            date = pubDateFormat.parse(pubDate);
+        } catch (ParseException e) {
+            pubDateFormat = new SimpleDateFormat(formatLocal); //fallback
+            date = pubDateFormat.parse(pubDate);
+        }
+        return date;
     }
 }
