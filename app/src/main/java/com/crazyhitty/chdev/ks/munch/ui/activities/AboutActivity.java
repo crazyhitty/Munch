@@ -155,6 +155,7 @@ public class AboutActivity extends AppCompatActivity {
         recyclerViewLibraries.setLayoutManager(mLayoutManager);
         LibrariesRecyclerViewAdapter librariesRecyclerViewAdapter = new LibrariesRecyclerViewAdapter(AboutActivity.this, new LibraryItem().getLibraryItems(AboutActivity.this));
         recyclerViewLibraries.setAdapter(librariesRecyclerViewAdapter);
+        recyclerViewLibraries.setNestedScrollingEnabled(false);
     }
 
     @Override
@@ -190,6 +191,26 @@ public class AboutActivity extends AppCompatActivity {
                 new WebsiteIntentUtil(AboutActivity.this).loadNormalBrowser(getResources().getString(R.string.github_source_code));
             }
             return true;
+        }
+
+        if (id == R.id.action_contributions) {
+            MaterialDialog contributionsDialog = new MaterialDialog.Builder(AboutActivity.this)
+                    .title(R.string.contributions)
+                    .items(R.array.contributions_arr)
+                    .content(R.string.contributions_desc)
+                    .itemsCallback(new MaterialDialog.ListCallback() {
+                        @Override
+                        public void onSelection(MaterialDialog dialog, View itemView, int which, CharSequence text) {
+                            if (SettingsPreferences.IN_APP_BROWSER) {
+                                new WebsiteIntentUtil(AboutActivity.this).loadCustomChromeTabs(getResources().getStringArray(R.array.contributions_links_arr)[which]);
+                            } else {
+                                new WebsiteIntentUtil(AboutActivity.this).loadNormalBrowser(getResources().getStringArray(R.array.contributions_links_arr)[which]);
+                            }
+                        }
+                    })
+                    .negativeText(R.string.dismiss)
+                    .build();
+            contributionsDialog.show();
         }
 
         if (id == R.id.action_licence) {

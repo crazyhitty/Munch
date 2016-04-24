@@ -1,3 +1,5 @@
+<b>Version 0.44</b>\n\n
+Fixed some issues with feed parsing, thanks to https://github.com/LukeOwncloud\n\n
 <b>Version 0.43</b>\n\n
 Minor bug fixes.\n\n
 <b>Version 0.42</b>\n\n

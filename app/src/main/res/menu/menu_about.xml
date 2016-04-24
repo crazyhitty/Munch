@@ -18,8 +18,13 @@
         android:title="@string/source_code"
         app:showAsAction="never" />
     <item
-        android:id="@+id/action_licence"
+        android:id="@+id/action_contributions"
         android:orderInCategory="4"
+        android:title="@string/contributions"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_licence"
+        android:orderInCategory="5"
         android:title="@string/licence"
         app:showAsAction="never" />
 </menu>

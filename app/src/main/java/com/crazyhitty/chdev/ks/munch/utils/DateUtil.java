@@ -3,15 +3,15 @@ package com.crazyhitty.chdev.ks.munch.utils;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Locale;
 
 /**
  * Created by Kartik_ch on 11/8/2015.
  */
 public class DateUtil {
-    private String date;
     String formatRfc2822 = "EEE, dd MMM yyyy HH:mm:ss Z";
     String formatLocal = "EEE, d MMM yyyy";
-
+    private String date;
 
     public String getCurrDate() {
         date = new SimpleDateFormat("dd/MM/yyyy hh:mm:ss").format(new Date());

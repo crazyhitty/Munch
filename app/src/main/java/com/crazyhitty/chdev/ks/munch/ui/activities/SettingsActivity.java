@@ -117,7 +117,7 @@ public class SettingsActivity extends AppCompatActivity implements FileChooserDi
         private static String SOURCE_NAME = "source_name";
         private static String SOURCE_URL = "source_url";
         private static String SOURCE_CATEGORY = "source_category";
-        private static String FEEDS_NOT_WORKING_TUTORIAL_URL = "http://crazyhitty.com/tutorial/make-your-feeds-work-with-munch/";
+        private static String FEEDS_NOT_WORKING_TUTORIAL_URL = "http://crazyhitty.com/blog/2016/january/make-your-feeds-work-with-munch.html";
         private CuratedFeedsPresenter mCuratedFeedsPresenter;
         private SourcesPresenter mSourcesPresenter;
         private Preference mFeedsNotWorkingPreference;
