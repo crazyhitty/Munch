@@ -26,7 +26,7 @@ public class RssParser extends AsyncTask<String, Integer, String> {
     @Override
     protected String doInBackground(String... strings) {
         try {
-            Document rssDocument = Jsoup.connect(mUrl).parser(Parser.xmlParser()).get();
+            Document rssDocument = Jsoup.connect(mUrl).ignoreContentType(true).parser(Parser.xmlParser()).get();
             mItems = rssDocument.select("item");
         } catch (IOException e) {
             e.printStackTrace();
